@@ -47,6 +47,7 @@ GameData.init(
 	{
 		sequelize,
 		freezeTableName: true,
+		timeStamps:false,
 		underscored: true,
 		modelName: 'gameData',
 	}
