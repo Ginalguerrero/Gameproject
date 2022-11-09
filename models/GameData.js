@@ -13,35 +13,46 @@ GameData.init(
 		},
 		name: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		},
 		publisher: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
+		},
+		description:{
+			type: DataTypes.STRING,
+			allowNull: false
+		},
+		website: {
+			type: DataTypes.STRING,
 		},
 		platforms: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		},
 		categories: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		},
 		genres: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		},
 		game_type: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		},
 		price: {
 			type: DataTypes.Decimal,
-			allowNull: false,
+			allowNull: false
+		},
+		rating:{
+			type: Datatypes.INTEGER,
+			defaultValue: 0
 		},
 		game_image: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		}
 	},
 	{
@@ -53,4 +64,5 @@ GameData.init(
 	}
 );
 
-module.exports = Comment;
+module.exports = GameData;
+
