@@ -1,6 +1,7 @@
 const User = require('./User');
 const GameData = require('./GameData');
 const Comment = require('./Comment');
+const ScreenShots = require('./ScreenShots');
 
 User.hasMany(Comment, {
     foreignKey: 'user_id',
@@ -9,6 +10,15 @@ User.hasMany(Comment, {
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'SET NULL'
+});
+
+GameData.hasMany(ScreenShots, {
+    foreignKey: 'game_id',
+});
+
+ScreenShots.belongsTo(GameData, {
+    foreignKey: 'game_id',
+    onDelete: 'CASCADE'
 });
 
 GameData.hasMany(Comment, {
@@ -20,3 +30,4 @@ Comment.belongsTo(GameData, {
     onDelete: 'CASCADE'
 });
 
+module.exports = { User, Comment, GameData, ScreenShots };
