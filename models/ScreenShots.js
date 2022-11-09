@@ -1,8 +1,9 @@
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model {}
-Comment.init(
+class ScreenShots extends Model {}
+
+ScreenShots.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -10,17 +11,9 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true
         },
-        comment: {
+        img_url: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
         },
         game_id: {
             type: DataTypes.INTEGER,
@@ -34,9 +27,10 @@ Comment.init(
     {
         sequelize,
         freezeTableName: true,
+        timeStamps: false,
         underscored: true,
-        modelName: 'comment'
+        modelName: 'screenshots'
     }
 );
 
-module.exports = Comment;
+module.exports = ScreenShots;
