@@ -1,1 +1,10 @@
-<div>made it here</div>
+<div class="games">
+  {{#each displayGames as |game|}}
+    <div>
+      <a href="{{game.id}}">
+        <img src="{{game.game_image}}" alt="{{game.name}}" />
+        <h2>{{game.name}}</h2>
+      </a>
+    </div>
+  {{/each}}
+</div>
