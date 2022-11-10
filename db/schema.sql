@@ -15,9 +15,18 @@ CREATE TABLE gamedata (
   genres VARCHAR(250) NOT NULL,
   game_type VARCHAR(250) NOT NULL,
   price decimal(10,2) NOT NULL,
-  game_image VARCHAR(250) NOT NULL
-  rating INT DEFAULT 0,
-  
+  game_image VARCHAR(250) NOT NULL,
+  rating INT DEFAULT 0
 );
+
+CREATE TABLE screenshots (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  game_id INT,
+  img_url VARCHAR(250) NOT NULL,
+  FOREIGN KEY (game_id)
+  REFERENCES gamedata(id)
+  ON DELETE CASCADE
+);
+
 
 SHOW TABLES;
