@@ -24,7 +24,8 @@ router.get('/:id', auth, async (req, res) => {
 			],
 		});
 		const game = gameData.get({ plain: true });
-		
+		res.json(game)
+		res.json(game);
 		// res.render('', {
 		// 	game,
 		// 	loggedIn: req.session.loggedIn,

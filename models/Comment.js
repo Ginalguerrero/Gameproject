@@ -26,13 +26,14 @@ Comment.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'gameData',
+                model: 'gamedata',
                 key: 'id'
             }
         }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'comment'
