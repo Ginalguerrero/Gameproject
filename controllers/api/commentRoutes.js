@@ -8,7 +8,8 @@ router.post('/', auth, async (req, res) => {
 		const createComment = await Comment.create({
 			comment: req.body.comment,
 			game_id: req.body.game_id,
-			user_id: req.body.user_id
+			// pulls user id from the session when the user logged in
+			user_id: req.session.userId
 		});
 		res.status(200).json(createComment);
 	} catch (err) {
