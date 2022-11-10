@@ -2,6 +2,7 @@
 - Remove bg colors
 - Fix sizes 
 - Pick a font
+- Pick colors
 */
 
 header {
@@ -33,4 +34,28 @@ ul {
 
 nav:hover {
     left: 0;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 30px;
+    justify-content: center;
+    justify-items: start;
+    align-items: center;
+    margin: 30px 10px;
+}
+
+/* TODO: just for view */
+.games div{
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.games h2 {
+   margin: 20px 10px;
+   font-size: 2rem;
+   color: #fafafa;
+
 }
