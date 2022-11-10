@@ -25,6 +25,7 @@ GameData.init(
 		},
 		website: {
 			type: DataTypes.STRING,
+			allowNull: false
 		},
 		platforms: {
 			type: DataTypes.STRING,
