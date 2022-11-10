@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { GameData, Comment, User, ScreenShots } = require('../models');
-const auth = require('../utils/auth');
+const { GameData, Comment, User, ScreenShots } = require('../../models');
+const auth = require('../../utils/auth');
 
 // Returns Game by user Id includes comments
 router.get('/:id', auth, async (req, res) => {
