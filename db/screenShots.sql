@@ -7,7 +7,7 @@
 -- USE game_db;
 -- SHOW TABLES;
 
-INSERT INTO gamedata (
+INSERT INTO screenshots (
 		game_id,
 		img_url
 	)
