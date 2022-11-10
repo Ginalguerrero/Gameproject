@@ -1,12 +1,4 @@
 
-
-
-
--- SHOW TABLES;
-
--- USE game_db;
--- SHOW TABLES;
-
 INSERT INTO screenshots (
 		game_id,
 		img_url
