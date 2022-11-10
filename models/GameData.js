@@ -20,7 +20,7 @@ GameData.init(
 			allowNull: false
 		},
 		description:{
-			type: DataTypes.STRING,
+			type: DataTypes.TEXT,
 			allowNull: false
 		},
 		website: {
@@ -61,7 +61,7 @@ GameData.init(
 		freezeTableName: true,
 		timeStamps:false,
 		underscored: true,
-		modelName: 'gameData',
+		modelName: 'gamedata',
 	}
 );
 
