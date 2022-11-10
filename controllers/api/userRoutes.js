@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const auth = require('../../utils/auth');
 
-// CREATE new user
+// Create new user
 router.post('/signup', async (req, res) => {
 	try {
 		const userData = await User.create({
@@ -56,6 +57,70 @@ router.post('/logout', (req, res) => {
 		});
 	} else {
 		res.status(404).end();
+	}
+});
+
+// update user name
+router.put('/:id', auth, async (req, res) => {
+	try {
+		const updateUser = await User.update(
+            {
+                user_name: req.body.user_name
+            },
+			{
+				where: {
+					id: req.params.id,
+				}
+			}
+		);
+		if (!updateUser ) {
+			res.status(404).json({ message: 'issue updating your user name, please try again.' });
+			return;
+		}
+		res.status(200).json(updateUser);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
+// update user password
+router.put('password/:id', auth, async (req, res) => {
+	try {
+		const updatePassword = await User.update(
+            {
+                password: req.body.password
+            },
+			{
+				where: {
+					id: req.params.id,
+				}
+			}
+		);
+		if (!updatePassword ) {
+			res.status(404).json({ message: 'issue updating your password, please try again.' });
+			return;
+		}
+		res.status(200).json(updatePassword);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
+// delete a user account
+router.delete('/:id', auth, async (req, res) => {
+	try {
+		const deletedUser = await User.destroy({
+			where: {
+				id: req.params.id
+			},
+		});
+		if (!deletedUser) {
+			res.status(404).json({ message: 'Account destroyed' });
+			return;
+		}
+		res.status(200).json(deletedUser);
+	} catch (err) {
+		res.status(500).json(err);
 	}
 });
 
