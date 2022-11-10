@@ -19,4 +19,37 @@ CREATE TABLE gamedata (
   rating INT DEFAULT 0
 );
 
+CREATE TABLE screenshots (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  game_id INT,
+  img_url VARCHAR(250) NOT NULL,
+  FOREIGN KEY (game_id)
+  REFERENCES gamedata(id)
+  ON DELETE CASCADE
+);
+
+CREATE TABLE user (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  user_name VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL,
+  game_id INT,
+  FOREIGN KEY (game_id)
+  REFERENCES gamedata(id)
+  ON DELETE SET NULL
+);
+
+CREATE TABLE comment (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  comment VARCHAR(250) NOT NULL,
+  user_id INT,
+  game_id INT,
+  FOREIGN KEY (game_id)
+  REFERENCES gamedata(id)
+  ON DELETE CASCADE,
+  FOREIGN KEY (user_id)
+  REFERENCES user(id)
+  ON DELETE CASCADE
+);
+
+
 SHOW TABLES;

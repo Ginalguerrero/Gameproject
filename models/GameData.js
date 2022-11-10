@@ -61,7 +61,7 @@ GameData.init(
 		freezeTableName: true,
 		timeStamps:false,
 		underscored: true,
-		modelName: 'gameData',
+		modelName: 'gamedata',
 	}
 );
 
