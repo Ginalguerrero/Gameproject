@@ -8,7 +8,7 @@ CREATE TABLE gamedata (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(250) NOT NULL,
   publisher VARCHAR(250) NOT NULL,
-  description VARCHAR(2500) NOT NULL,
+  description VARCHAR(MAX) NOT NULL,
   website VARCHAR(250) NOT NULL,
   platforms VARCHAR(250) NOT NULL,
   categories VARCHAR(250) NOT NULL,

@@ -32,7 +32,7 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'gameData',
+                model: 'gamedata',
                 key: 'id'
             }
         }
@@ -46,12 +46,13 @@ User.init(
             beforeUpdate: async(userPassword) => {
                 userPassword.password = await bcrypt.hashSync(userPassword.password, 8);
                 return userPassword;
-            },
-            beforeBulkCreate: async(userPassword) => {
-                userPassword.array.forEach(async element => {
-                    element.password = await bcrypt.hashSync(element.password, 8);
-                });
             }
+            // beforeBulkCreate: async(userPassword) => {
+            //     userPassword.array.forEach(async (user) => {
+            //         const pass = user.password;	
+            //         element.password = await bcrypt.hashSync(pass, 8);
+            //     });
+            // }
         },
         sequelize,
         timestamps: false,
