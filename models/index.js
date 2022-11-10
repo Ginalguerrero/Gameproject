@@ -29,5 +29,13 @@ Comment.belongsTo(GameData, {
     foreignKey: 'game_id',
     onDelete: 'CASCADE'
 });
+GameData.hasMany(User, {
+    foreignKey: 'game_id',
+});
+
+User.belongsTo(GameData, {
+    foreignKey: 'game_id',
+    onDelete: 'SET NULL'
+});
 
 module.exports = { User, Comment, GameData, ScreenShots };
