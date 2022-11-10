@@ -1,0 +1,36 @@
+/* TODOS:
+- Remove bg colors
+- Fix sizes 
+- Pick a font
+*/
+
+header {
+    background-color: aqua;
+    height: 100px;
+}
+
+nav {
+    position: fixed;
+    top: 100px;
+    left: -170px;
+
+    width: 200px;
+    height: 100%;
+    transition:all 500ms;
+
+    display: flex;
+    cursor: pointer;
+}
+
+ul {
+    background-color: palegreen;
+    width: 170px;
+}
+
+.hover-part {
+    width: 30px;
+}
+
+nav:hover {
+    left: 0;
+}
