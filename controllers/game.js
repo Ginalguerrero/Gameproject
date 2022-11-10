@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { GameData, Comment, User } = require('../models');
+const { GameData, Comment, User, ScreenShots } = require('../models');
 const auth = require('../utils/auth');
 
 // Returns Game by user Id includes comments
@@ -14,6 +14,13 @@ router.get('/:id', auth, async (req, res) => {
 				{
 					model: Comment,
 				},
+				{
+					model: ScreenShots,
+					where: {
+						game_id: req.params.id
+					}
+				},
+
 			],
 		});
 		const game = gameData.get({ plain: true });
@@ -121,4 +128,5 @@ router.get('/price/:orderBy', auth, async (req, res) => {
 		res.status(500).json(err);
 	}
 });
+
 module.exports = router;
