@@ -44,11 +44,11 @@ GameData.init(
 			allowNull: false
 		},
 		price: {
-			type: DataTypes.Decimal,
+			type: DataTypes.DECIMAL,
 			allowNull: false
 		},
 		rating:{
-			type: Datatypes.INTEGER,
+			type: DataTypes.INTEGER,
 			defaultValue: 0
 		},
 		game_image: {

@@ -10,7 +10,10 @@ router.post('/signup', async (req, res) => {
 			password: req.body.password,
 		});
 		req.session.save(() => {
+			// saves the users logged in statue
 			req.session.loggedIn = true;
+			// saves the user profile Id
+			req.session.userId = userData.id;
 			res.status(200).json(userData);
 		});
 	} catch (err) {
@@ -38,9 +41,11 @@ router.post('/login', async (req, res) => {
 		}
 
 		req.session.save(() => {
+			// saves the users logged in statue
 			req.session.loggedIn = true;
-			res
-				.status(200)
+			// saves the user profile Id
+			req.session.userId = userData.id;
+			res.status(200)
 				.json({ user: userData, message: 'successfully logged in!' });
 		});
 	} catch (err) {
@@ -61,7 +66,7 @@ router.post('/logout', (req, res) => {
 });
 
 // update user name
-router.put('/:id', auth, async (req, res) => {
+router.put('/', auth, async (req, res) => {
 	try {
 		const updateUser = await User.update(
             {
@@ -69,7 +74,7 @@ router.put('/:id', auth, async (req, res) => {
             },
 			{
 				where: {
-					id: req.params.id,
+					id: req.session.userId
 				}
 			}
 		);
@@ -84,7 +89,7 @@ router.put('/:id', auth, async (req, res) => {
 });
 
 // update user password
-router.put('password/:id', auth, async (req, res) => {
+router.put('password', auth, async (req, res) => {
 	try {
 		const updatePassword = await User.update(
             {
@@ -92,7 +97,7 @@ router.put('password/:id', auth, async (req, res) => {
             },
 			{
 				where: {
-					id: req.params.id,
+					id: req.session.userId,
 				}
 			}
 		);
@@ -107,11 +112,11 @@ router.put('password/:id', auth, async (req, res) => {
 });
 
 // delete a user account
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/', auth, async (req, res) => {
 	try {
 		const deletedUser = await User.destroy({
 			where: {
-				id: req.params.id
+				id: req.session.userId
 			},
 		});
 		if (!deletedUser) {
