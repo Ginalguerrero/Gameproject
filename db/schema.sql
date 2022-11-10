@@ -17,6 +17,11 @@ CREATE TABLE gamedata (
   price decimal(10,2) NOT NULL,
   rating INT, 
   game_image VARCHAR(250) NOT NULL
+  game_image VARCHAR(250) NOT NULL,
+  website VARCHAR(250) NOT NULL,
+  rating INT DEFAULT 0,
+  description  VARCHAR(250) NOT NULL
+
 );
 
 SHOW TABLES;
