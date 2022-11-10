@@ -24,10 +24,11 @@ router.get('/:id', auth, async (req, res) => {
 			],
 		});
 		const game = gameData.get({ plain: true });
-		res.render('', {
-			game,
-			loggedIn: req.session.loggedIn,
-		});
+		
+		// res.render('', {
+		// 	game,
+		// 	loggedIn: req.session.loggedIn,
+		// });
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);

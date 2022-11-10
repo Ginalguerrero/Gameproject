@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
             url: 'https://rawg-video-games-database.p.rapidapi.com/games?page=1&page_size=5',
             headers: {
               'X-RapidAPI-Key': process.env.API_KEY,
-              'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com'
+              'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com/games'
             }
           };
           // https://rawg-video-games-database.p.rapidapi.com/games?page=1&page_size=5
