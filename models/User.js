@@ -27,6 +27,14 @@ User.init(
                 len: [8],
                 isAlphanumeric: true
             }
+        },
+        game_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'gameData',
+                key: 'id'
+            }
         }
     },
     {

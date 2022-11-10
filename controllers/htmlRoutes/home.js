@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { GameData } = require('../models');
+const { GameData } = require('../../models');
 
 // Main page home route
 router.get('/', async (req, res) => {
