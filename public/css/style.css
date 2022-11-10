@@ -1,0 +1,61 @@
+/* TODOS:
+- Remove bg colors
+- Fix sizes 
+- Pick a font
+- Pick colors
+*/
+
+header {
+    background-color: aqua;
+    height: 100px;
+}
+
+nav {
+    position: fixed;
+    top: 100px;
+    left: -170px;
+
+    width: 200px;
+    height: 100%;
+    transition:all 500ms;
+
+    display: flex;
+    cursor: pointer;
+}
+
+ul {
+    background-color: palegreen;
+    width: 170px;
+}
+
+.hover-part {
+    width: 30px;
+}
+
+nav:hover {
+    left: 0;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 30px;
+    justify-content: center;
+    justify-items: start;
+    align-items: center;
+    margin: 30px 10px;
+}
+
+/* TODO: just for view */
+.games div{
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.games h2 {
+   margin: 20px 10px;
+   font-size: 2rem;
+   color: #fafafa;
+
+}
