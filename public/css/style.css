@@ -34,6 +34,12 @@ header {
     align-items: center;
     font-family: 'Josefin Sans', sans-serif;/*need to change the font-family*/
 }
+.logo_name{
+    display:flex;
+}
+.logo{
+    /* width: 70px; */
+}
 
 ul li {
     display: inline-block;
