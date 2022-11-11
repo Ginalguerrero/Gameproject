@@ -1,3 +1,18 @@
+CREATE TABLE gamedata (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(250) NOT NULL,
+  publisher VARCHAR(250) NOT NULL,
+  description VARCHAR(MAX) NOT NULL,
+  website VARCHAR(250) NOT NULL,
+  platforms VARCHAR(250) NOT NULL,
+  categories VARCHAR(250) NOT NULL,
+  genres VARCHAR(250) NOT NULL,
+  game_type VARCHAR(250) NOT NULL,
+  price decimal(10,2) NOT NULL,
+  game_image VARCHAR(250) NOT NULL,
+  rating INT DEFAULT 0
+);
+
 USE game_db;
 SHOW TABLES;
 INSERT INTO gamedata (
