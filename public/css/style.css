@@ -117,3 +117,68 @@ nav:hover {
    font-size: 2rem;
    color: #fafafa;
 }
+
+/*================= Login Page ========================*/
+.login-card {
+    /* background-color: white; */
+    display: block;
+    align-content: center;
+    justify-content: center;
+    height: 550;
+    width: 450;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.form-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 200%;
+    /* border: 2px black solid; */
+}
+.login-image{
+    align-items: center;
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+/*///////////////////////////////////////////*/
+form .form-group {
+    display: block;
+    width: 100%;
+    margin: 0.625rem 0;
+  }
+
+
+
+  form .form-input {
+    display: block;
+    width: 100%;
+    height: 33px;
+    border-radius: 15px;
+    padding-left: 10px;
+
+}
+
+.btn {
+    text-align: center;
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    margin: 0;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid transparent;
+    outline: none;
+    color: #1a1a1a;
+    background-color: #aeaeae;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
