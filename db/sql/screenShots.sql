@@ -1,3 +1,11 @@
+CREATE TABLE screenshots (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  game_id INT,
+  img_url VARCHAR(250) NOT NULL,
+  FOREIGN KEY (game_id)
+  REFERENCES gamedata(id)
+  ON DELETE CASCADE
+);
 
 INSERT INTO screenshots (
 		game_id,
