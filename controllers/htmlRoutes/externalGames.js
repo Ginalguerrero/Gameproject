@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
               res.json(response.data);
           }).catch(function (error) {
               console.error(error);
-          });
+          }); 
 
 		// res.render('home', {
 		// 	games,
