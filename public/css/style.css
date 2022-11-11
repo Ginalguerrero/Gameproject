@@ -42,6 +42,12 @@ header {
 .name_logo {
 	display: flex;
 }
+.logo_name{
+    display:flex;
+}
+.logo{
+    /* width: 70px; */
+}
 
 ul li {
 	display: inline-block;
