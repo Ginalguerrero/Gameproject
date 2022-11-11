@@ -1,0 +1,26 @@
+{{#with game}}
+<div class="images">
+  <div class="container-image">
+    <img class="primary" src="{{game_image}}" alt="{{name}}" />
+    <div class="info">
+      <h2>{{name}}</h2>
+      <p>{{publisher}}</p>
+      <p>{{platform}}</p>
+      <div class="list">
+        {{{format_list categories}}}
+      </div>
+      <div class="list">
+        {{{format_list genres}}}
+      </div>
+      <div class="list">
+        {{{format_list game_type}}}
+      </div>
+    </div>
+  </div>
+
+    {{#each screenshots as |image|}}
+      <img src="{{image.img_url}}" alt="{{name}}" />
+    {{/each}}
+
+</div>
+{{/with}}
