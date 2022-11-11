@@ -4,16 +4,50 @@
 - Pick a font
 - Pick colors
 */
+:root {
+    --backgroundColor:#1d222f;
+    --headerTextBoxColor: #010427;
+    --textColor: white;
+    --secondaryColor: ;
+    --highlightColor: #e60000;;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    padding:0;
+    margin:0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--backgroundColor);
+}
 
 header {
-    background-color: aqua;
+    background-color: var(--headerTextBoxColor);
+    color: var(--textColor);
     height: 100px;
+    font-size: 75px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;/*need to change the font-family*/
+}
+
+ul li {
+    display: inline-block;
+    justify-content: flex-end;
+    /* list-style-type:none; */
+    letter-spacing: 1px;
+    font-size: 25px;
+    /* color:var(--highlightColor); */
 }
 
 nav {
     position: fixed;
     top: 100px;
-    left: -170px;
+    left: -250px;
 
     width: 200px;
     height: 100%;
@@ -24,8 +58,8 @@ nav {
 }
 
 ul {
-    background-color: palegreen;
-    width: 170px;
+    /* background-color: rgb(0, 0, 0); */
+    width: 250px;
 }
 
 .hover-part {
@@ -37,9 +71,11 @@ nav:hover {
 }
 
 .games {
-    display: grid;
+    /* display: grid; */
+    display: flex;
     grid-template-columns: repeat(auto-fill, 200px);
-    gap: 30px;
+    gap: 80px;
+    flex-wrap: wrap;
     justify-content: center;
     justify-items: start;
     align-items: center;
@@ -48,14 +84,27 @@ nav:hover {
 
 /* TODO: just for view */
 .games div{
-    background-color: #333;
+    /* background-color: #333;
+    border-radius: 10px;
+    overflow: hidden; */
+    
+    background-color: #201f1f;
     border-radius: 10px;
     overflow: hidden;
+    background: var(--headerTextBoxColor);
+    box-shadow: 0px 5px 5px 0px #c2bcbc;
+    width: 300px;
+    height:400px;
+    object-fit: cover;
+}
+
+
+.games div:hover {
+    box-shadow: 7px 7px 10px var(--highlightColor);
 }
 
 .games h2 {
-   margin: 20px 10px;
+   margin: 90px 10px;
    font-size: 2rem;
    color: #fafafa;
-
 }
