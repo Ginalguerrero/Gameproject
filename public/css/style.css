@@ -14,10 +14,13 @@
 
 *{
     box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
     padding:0;
     margin:0;
     scroll-behavior: smooth;
+    font-family: 'Rubik Glitch', cursive;/*Error messages*/
+    font-family: 'Fira Code', monospace;/*Text Message*/
+    font-family: 'Share Tech Mono', monospace;/*Game title*/
+    font-family: 'Chakra Petch', sans-serif;/*Text message*/
 }
 
 body {
