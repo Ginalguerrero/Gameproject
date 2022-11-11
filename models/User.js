@@ -46,13 +46,12 @@ User.init(
             beforeUpdate: async(userPassword) => {
                 userPassword.password = await bcrypt.hashSync(userPassword.password, 8);
                 return userPassword;
+            },
+            beforeBulkCreate: async(userPassword) => {
+                userPassword.forEach(async (user) => {
+                    user.password = await bcrypt.hashSync(user.password, 8);
+                });
             }
-            // beforeBulkCreate: async(userPassword) => {
-            //     userPassword.array.forEach(async (user) => {
-            //         const pass = user.password;	
-            //         element.password = await bcrypt.hashSync(pass, 8);
-            //     });
-            // }
         },
         sequelize,
         timestamps: false,
