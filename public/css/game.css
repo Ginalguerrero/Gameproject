@@ -1,0 +1,46 @@
+.images  {
+    margin:50px 80px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.33fr 0.33fr;
+    gap: 30px;
+    grid-template-areas: 
+    "header . ."
+    "header . .";
+}
+
+.container-image {
+    width: 100%;
+    grid-area: header;
+}
+.container-image img {
+    width: 100%;
+}
+
+.container-image:hover .primary {
+    opacity: 0.2;
+}
+
+.container-image:hover .info {
+    opacity: 1;
+}
+
+.info {
+    width:    fit-content;
+    max-width: calc(100% - 40px);
+    position: absolute;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    color: #fff;
+    opacity: 0;
+}
+
+.container-image {
+    position: relative;
+} 
+
+.description {
+    margin: 30px 80px;
+    line-height: 1.2rem;
+    color: #fafafa;
+}
