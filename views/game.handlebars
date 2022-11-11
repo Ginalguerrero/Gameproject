@@ -23,4 +23,14 @@
     {{/each}}
 
 </div>
+<div class="description">
+  <h3>Description:</h3>
+  <p>{{description}}</p>
+</div>
+<div class="comments">
+  {{/* FIXME: fix comments */}}
+  {{#each comments as |comment|}}
+    <p>{{comment.comment}}</p>
+  {{/each}}
+</div>
 {{/with}}

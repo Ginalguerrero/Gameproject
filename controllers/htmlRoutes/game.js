@@ -25,12 +25,11 @@ router.get('/:id', async (req, res) => {
 			],
 		});
 		const game = gameData.get({ plain: true });
-		res.json(game)
-		res.json(game);
-		// res.render('', {
-		// 	game,
-		// 	loggedIn: req.session.loggedIn,
-		// });
+	
+		res.render('game', {
+			game,
+			loggedIn: req.session.loggedIn,
+		});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
