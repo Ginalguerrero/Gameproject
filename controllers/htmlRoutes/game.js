@@ -2,8 +2,7 @@ const router = require('express').Router();
 const { GameData, Comment, User, ScreenShots } = require('../../models');
 const auth = require('../../utils/auth');
 
-// Returns Game by user Id includes comments
-// TODO: put the auth back
+// Returns Game by user Id includes comments auth 
 router.get('/:id', async (req, res) => {
 	try {
 		const gameData = await GameData.findByPk(req.params.id, {
@@ -25,7 +24,7 @@ router.get('/:id', async (req, res) => {
 			],
 		});
 		const game = gameData.get({ plain: true });
-	
+	console.log(game);
 		res.render('game', {
 			game,
 			loggedIn: req.session.loggedIn,
