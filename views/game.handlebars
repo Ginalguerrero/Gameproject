@@ -1,36 +1,45 @@
 {{#with game}}
 <div class="images">
   <div class="container-image">
-    <img class="primary" src="{{game_image}}" alt="{{name}}" />
+    <img class="primary" id="primary" src="{{game_image}}" alt="{name}}" />
     <div class="info">
-      <h2>{{name}}</h2>
-      <p>{{publisher}}</p>
-      <p>{{platform}}</p>
+      <h2>GAME: {{name}}</h2>
+      <p>Publisher: {{publisher}}</p>
+      <p>Platforms: {{platform}}</p>
+      <p>Categories</p>
       <div class="list">
         {{{format_list categories}}}
       </div>
+      <p>Genres</p>
       <div class="list">
         {{{format_list genres}}}
       </div>
+      <p>game_type</p>
       <div class="list">
         {{{format_list game_type}}}
       </div>
     </div>
   </div>
-
+<div id="screenShots">
     {{#each screenshots as |image|}}
       <img src="{{image.img_url}}" alt="{{name}}" />
     {{/each}}
+</div>
 
 </div>
 <div class="description">
   <h3>Description:</h3>
   <p>{{description}}</p>
 </div>
-<div class="comments">
-  {{/* FIXME: fix comments */}}
-  {{#each comments as |comment|}}
-    <p>{{comment.comment}}</p>
+
+ <div class="comments">
+  {{#if comments}}
+  {{#each comments}}
+    {{>comments}}
   {{/each}}
+  {{/if}}
 </div>
-{{/with}}
+
+{{/with}} 
+
+ <script src="/js/screenshots.js"></script>

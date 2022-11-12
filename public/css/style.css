@@ -12,7 +12,7 @@
 */
 :root {
 
-login-page
+/* login-page */
     --backgroundColor:#1d222f;
     --headerTextBoxColor: #010427;
     --textColor: white;
@@ -29,7 +29,6 @@ login-page
     padding:0;
     margin:0;
     scroll-behavior: smooth;
-=======
 	--backgroundColor: #1d222f;
 	--headerTextBoxColor: #010427;
 	--textColor: white;
@@ -88,11 +87,9 @@ nav {
 	position: fixed;
 	top: 100px;
 	left: -250px;
-
 	width: 200px;
 	height: 100%;
 	transition: all 500ms;
-
 	display: flex;
 	cursor: pointer;
 }
@@ -144,7 +141,7 @@ nav:hover {
 
 .games h2 {
 
-login-page
+/* login-page */
    margin: 90px 10px;
    font-size: 2rem;
    color: #fafafa;
@@ -226,9 +223,5 @@ form.form-group.btn {
   .btn:hover {
     background-color: #750606;
   }
-=======
-	margin: 90px 10px;
-	font-size: 2rem;
-	color: #fafafa;
-}
- main
+
+
