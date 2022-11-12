@@ -152,6 +152,9 @@ nav:hover {
     display: flex;
     align-content: center;
     justify-content: center;
+    font-size: 120%;
+    
+
 }
 
 .login-card {
@@ -176,8 +179,10 @@ nav:hover {
     /* border: 2px black solid; */
 }
 
-.login-image{
+.login-image,.login_title{
     align-items: center;
+    font-size: 150%;
+    font-family: var(--textDescription);
 }
 
 .middle {
@@ -185,12 +190,19 @@ nav:hover {
     justify-content: center;
     align-content: center;
 }
+/* .email-login{
+    font-family: var(--textDescription);
+ } */
 
 form .form-group {
     display: block;
     width: 100%;
     margin: 0.625rem 0;
 }
+
+#label {
+    font-family: var(--textDescription);
+} 
 
 form.form-group.btn {
     display: flex;
@@ -216,13 +228,15 @@ form .form-input {
     border-radius: 0.3rem;
     border: 1px solid transparent;
     outline: none;
-    color: #1a1a1a;
-    background-color: #3d3d3d;
-    transition: color 0.5s ease-in-out;
+    color: var(--textColor);
+    background-color: var(--backgroundColor);
+    transition: background-color 0.5s ease-in-out;
+    transition: color 0.3s ease-in-out;
   }
 
   .btn:hover {
-    background-color: #750606;
+    background-color: var(--headerTextBoxColor);
+    color:white;
   }
 
 
