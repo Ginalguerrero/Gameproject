@@ -17,7 +17,7 @@
           <img src="/images/logoWhite.png" alt = "logo" class="logo"> <h1>4Play</h1>
         </div>
       </a>
-      <div>
+      <div class="header-li">
         <ul>
           <a href="/" ><li>Home <i class="fa-brands fa-fort-awesome"></i></li></a>
           {{#if loggedIn}}
@@ -31,19 +31,17 @@
      
     </div>
 
-    <nav>
+    <aside>
       <ul>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
+        <li class="sidebar">Filter</li>
+        <li class="sidebar">Filter</li>
+        <li class="sidebar">Filter</li>
+        <li class="sidebar">Filter</li>
+        <li class="sidebar">Filter</li>
       </ul>
       <!-- TODO: maybe add a icon to indicate to the user they can hover over the sidebar -->
-      <div class="hover-part"></div>
-    </nav>
+      <div class="hover-part"><i class="fa-solid fa-arrow-right arrow"></i></div>
+    </aside>
 
     <main>
       {{{body}}}

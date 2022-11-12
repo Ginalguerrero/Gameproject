@@ -1,7 +1,7 @@
 <div class="games">
   {{#each displayGames as |game|}}
     <a href="/game/{{game.id}}">
-      <div>
+      <div class="game-card">
         <img src="{{game.game_image}}" alt="{{game.name}}" />
         <h2>{{game.name}}</h2>
       </div>
