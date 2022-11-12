@@ -33,10 +33,9 @@
 </div>
 
  <div class="comments">
-  {{!-- {{/* FIXME: fix comments */}} --}}
   {{#if comments}}
-  {{#each comments as |comment|}}
-    <p>{{comment.comment}} {{format_date comment.createdAt}}</p>
+  {{#each comments}}
+    {{>comments}}
   {{/each}}
   {{/if}}
 </div>

@@ -44,3 +44,14 @@
     line-height: 1.2rem;
     color: #fafafa;
 }
+
+.game_comments{
+    display:flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    background: var(--headerTextBoxColor);
+    margin: 30px 80px;
+    line-height: 1.2rem;
+    color: #fafafa;
+    padding:10px;
+}

@@ -8,19 +8,12 @@ router.get('/:id', async (req, res) => {
 		const gameData = await GameData.findByPk(req.params.id, {
 			include: [
 				{
-					model: User,
-					attributes: ['user_name'],
-				},
-				{
 					model: Comment,
+					include: [{ model: User, attributes: ['user_name'] }],
 				},
 				{
-					model: ScreenShots,
-					where: {
-						game_id: req.params.id
-					}
+					model: ScreenShots
 				},
-
 			],
 		});
 		const game = gameData.get({ plain: true });
