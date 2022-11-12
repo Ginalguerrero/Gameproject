@@ -4,22 +4,12 @@ require('dotenv').config();
 
 router.get('/', async (req, res) => {
 	try {
-		const games = {
-            method: 'GET',
-            url: 'https://rawg-video-games-database.p.rapidapi.com/games?page=1&page_size=5',
-            headers: {
-              'X-RapidAPI-Key': process.env.API_KEY,
-              'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com/games'
-            }
-          };
-          // https://rawg-video-games-database.p.rapidapi.com/games?page=1&page_size=5
-          axios.request(games).then(function (response) {
-              console.log(response.data.get({ plain: true }));
+          axios.get(`https://api.rawg.io/api/games?key=${process.env.API_KEY}&page_size=5`).then(function (response) {
               res.json(response.data);
           }).catch(function (error) {
               console.error(error);
           });
-        
+
 		// res.render('home', {
 		// 	games,
 		// 	loggedIn: req.session.loggedIn,
@@ -29,5 +19,23 @@ router.get('/', async (req, res) => {
 		res.status(500).json(err);
 	}
 });
+// router.get('/key', async (req, res) => {
+// 	try {
+//           axios.get(`https://api.rawg.io/api/games?game_pk=3328&key=${process.env.API_KEY}`).then(function (response) {
+//               res.json(response.data);
+//           }).catch(function (error) {
+//               console.error(error);
+//           });
+
+//           console.log(response);
+// 		res.render('home', {
+// 			games,
+// 			loggedIn: req.session.loggedIn,
+// 		});
+// 	} catch (err) {
+// 		console.log(err);
+// 		res.status(500).json(err);
+// 	}
+// });
 
 module.exports = router;

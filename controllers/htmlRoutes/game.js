@@ -3,7 +3,8 @@ const { GameData, Comment, User, ScreenShots } = require('../../models');
 const auth = require('../../utils/auth');
 
 // Returns Game by user Id includes comments
-router.get('/:id', auth, async (req, res) => {
+// TODO: put the auth back
+router.get('/:id', async (req, res) => {
 	try {
 		const gameData = await GameData.findByPk(req.params.id, {
 			include: [
@@ -24,12 +25,11 @@ router.get('/:id', auth, async (req, res) => {
 			],
 		});
 		const game = gameData.get({ plain: true });
-		res.json(game)
-		res.json(game);
-		// res.render('', {
-		// 	game,
-		// 	loggedIn: req.session.loggedIn,
-		// });
+	
+		res.render('game', {
+			game,
+			loggedIn: req.session.loggedIn,
+		});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
