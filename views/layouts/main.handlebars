@@ -12,16 +12,18 @@
 
   <body>
     <header>
-      <div class="logo_name">
-        <img src="/images/logoWhite.png" alt = "logo" class="logo"> <h1>4Play</h1>
-      </div>
+      <a href="/">
+        <div class="logo_name">
+          <img src="/images/logoWhite.png" alt = "logo" class="logo"> <h1>4Play</h1>
+        </div>
+      </a>
       <div>
         <ul>
           <a href="/" ><li>Home <i class="fa-brands fa-fort-awesome"></i></li></a>
           {{#if loggedIn}}
           <a href=""><li id="logout">Logout <i class="fa-solid fa-skull-crossbones"></i></li></a>
           {{else}}
-          <a href = "/login"><li>Login<i class="fa-solid fa-user-astronaut"></i></li></a>
+          <a href ="/login"><li>Login<i class="fa-solid fa-user-astronaut"></i></li></a>
           {{/if}}
         </ul>
       </div>
