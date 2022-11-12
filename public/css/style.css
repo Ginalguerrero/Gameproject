@@ -1,3 +1,4 @@
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
@@ -10,9 +11,8 @@
 - Pick a font
 - Pick colors
 */
-:root {
 
-/* login-page */
+:root {
     --backgroundColor:#1d222f;
     --headerTextBoxColor: #010427;
     --textColor: white;
@@ -29,20 +29,6 @@
     padding:0;
     margin:0;
     scroll-behavior: smooth;
-	--backgroundColor: #1d222f;
-	--headerTextBoxColor: #010427;
-	--textColor: white;
-	--secondaryColor: ;
-	--highlightColor: #e60000;
-}
-
-* {
-	box-sizing: border-box;
-	font-family: 'Josefin Sans', sans-serif;
-	padding: 0;
-	margin: 0;
-	scroll-behavior: smooth;
-
 }
 
 body {
@@ -53,58 +39,93 @@ header {
 	background-color: var(--headerTextBoxColor);
 	color: var(--textColor);
 	height: 100px;
+    width: 100%;
 	font-size: 75px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-family: 'Josefin Sans', sans-serif; /*need to change the font-family*/
+	font-family: var(--gameTitle); /*need to change the font-family*/
+    position:fixed;
+    top:0;
+
 }
 
+/*************** logo ***************/
 .logo {
 	width: 70px;
     margin:15px;
+    margin-left: 30px;
 }
-.name_logo {
-	display: flex;
+
+.logo_name h1 {
+    font-family: var(--textNormal);
 }
+
 .logo_name{
     display:flex;
 }
-.logo{
-    width: 70px;
-}
 
-ul li {
+/* *******************Login & Home icons******************** */
+.header-li ul li { 
 	display: inline-block;
-	justify-content: flex-end;
-	/* list-style-type:none; */
+	justify-content: space-between;
 	letter-spacing: 1px;
 	font-size: 25px;
-	/* color:var(--highlightColor); */
+    font-family: var(--gameTitle);
 }
 
-nav {
+.header-li {
+    margin-right:30px;
+}
+/*********** side bar ************************/
+aside {
 	position: fixed;
 	top: 100px;
-	left: -250px;
+	left: -170px;
 	width: 200px;
 	height: 100%;
 	transition: all 500ms;
-	display: flex;
+	display: flex;  
+    flex-direction: column;
 	cursor: pointer;
+    background-color: #010427bf;/*header with transparency*/ 
+    color: var(--textColor);
+    font-family: var(--textDescription);
+    border-right: 0.5px solid rgba(255, 255, 255, 0.525);
 }
 
-ul {
-	/* background-color: rgb(0, 0, 0); */
-	width: 250px;
+aside:hover {
+	left: 0;
+}
+
+aside ul .sidebar{
+    display: block;
+    font-size: 150%;
 }
 
 .hover-part {
-	width: 30px;
+    width:197px; 
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+/* .hover-part {
+    width:210px; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+} */
+
+.arrow{
+    font-size: 200%;
+    color: var(--textColor);
 }
 
-nav:hover {
-	left: 0;
+/* ******************** game divs************************ */
+main{
+    margin-top:145px;
 }
 
 .games {
@@ -121,10 +142,6 @@ nav:hover {
 
 /* TODO: just for view */
 .games div {
-	/* background-color: #333;
-    border-radius: 10px;
-    overflow: hidden; */
-
 	background-color: #201f1f;
 	border-radius: 10px;
 	overflow: hidden;
@@ -140,11 +157,12 @@ nav:hover {
 }
 
 .games h2 {
-
 /* login-page */
    margin: 90px 10px;
    font-size: 2rem;
    color: #fafafa;
+   font-family: var(--gameTitle);
+
 }
 
 /*================= Login Page ========================*/
@@ -158,7 +176,6 @@ nav:hover {
 }
 
 .login-card {
-    /* background-color: white; */
     display: block;
     align-content: center;
     justify-content: center;
@@ -176,7 +193,6 @@ nav:hover {
     align-items: center;
     margin-bottom: 25px;
     font-size: 200%;
-    /* border: 2px black solid; */
 }
 
 .login-image,.login_title{
@@ -190,9 +206,7 @@ nav:hover {
     justify-content: center;
     align-content: center;
 }
-/* .email-login{
-    font-family: var(--textDescription);
- } */
+
 
 form .form-group {
     display: block;
