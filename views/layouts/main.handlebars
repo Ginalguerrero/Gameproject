@@ -17,8 +17,12 @@
       </div>
       <div>
         <ul>
-          <li>Home <i class="fa-brands fa-fort-awesome"></i></li>
-          <li>Login <i class="fa-solid fa-user-astronaut"></i></li>
+          <a href="/" ><li>Home <i class="fa-brands fa-fort-awesome"></i></li></a>
+          {{#if loggedIn}}
+          <a href=""><li id="logout">Logout <i class="fa-solid fa-skull-crossbones"></i></li></a>
+          {{else}}
+          <a href = "/login"><li>Login<i class="fa-solid fa-user-astronaut"></i></li></a>
+          {{/if}}
         </ul>
       </div>
     </header>
@@ -43,6 +47,9 @@
       {{{body}}}
     </main>
 
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
     <footer></footer>
   </body>
 </html>

@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 /* TODOS:
 - Remove bg colors
 - Fix sizes 
@@ -5,6 +11,25 @@
 - Pick colors
 */
 :root {
+
+login-page
+    --backgroundColor:#1d222f;
+    --headerTextBoxColor: #010427;
+    --textColor: white;
+    --secondaryColor: ;
+    --highlightColor: #e60000;
+    --errorMessages:'Rubik Glitch', cursive;
+    --textNormal:'Fira Code', monospace;
+    --gameTitle:'Share Tech Mono', monospace;
+    --textDescription:'Chakra Petch', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    scroll-behavior: smooth;
+=======
 	--backgroundColor: #1d222f;
 	--headerTextBoxColor: #010427;
 	--textColor: white;
@@ -18,6 +43,7 @@
 	padding: 0;
 	margin: 0;
 	scroll-behavior: smooth;
+
 }
 
 body {
@@ -46,7 +72,7 @@ header {
     display:flex;
 }
 .logo{
-    /* width: 70px; */
+    width: 70px;
 }
 
 ul li {
@@ -117,7 +143,92 @@ nav:hover {
 }
 
 .games h2 {
+
+login-page
+   margin: 90px 10px;
+   font-size: 2rem;
+   color: #fafafa;
+}
+
+/*================= Login Page ========================*/
+.center{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.login-card {
+    /* background-color: white; */
+    display: block;
+    align-content: center;
+    justify-content: center;
+    height: auto;
+    width: 450;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.form-login {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 200%;
+    /* border: 2px black solid; */
+}
+
+.login-image{
+    align-items: center;
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+form .form-group {
+    display: block;
+    width: 100%;
+    margin: 0.625rem 0;
+}
+
+form.form-group.btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+  form .form-input {
+    display: block;
+    width: 100%;
+    height: 33px;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+.btn {
+    text-align: center;
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    margin: 0;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid transparent;
+    outline: none;
+    color: #1a1a1a;
+    background-color: #3d3d3d;
+    transition: color 0.5s ease-in-out;
+  }
+
+  .btn:hover {
+    background-color: #750606;
+  }
+=======
 	margin: 90px 10px;
 	font-size: 2rem;
 	color: #fafafa;
 }
+ main
