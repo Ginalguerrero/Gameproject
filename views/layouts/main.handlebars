@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/game.css">
+    <link type="text/css" rel="stylesheet" href="simplePagination/simplePagination.css"/>
   </head>
 
   <body>
@@ -33,13 +34,22 @@
 
     <aside>
       <ul>
-        <li class="sidebar">Filter</li>
-        <li class="sidebar">Filter</li>
+        <li class="sidebar">Categories
+           <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+        </li> 
+
+        <li class="sidebar">Genres
+          <a class
+        </li>
         <li class="sidebar">Filter</li>
         <li class="sidebar">Filter</li>
         <li class="sidebar">Filter</li>
       </ul>
-      <!-- TODO: maybe add a icon to indicate to the user they can hover over the sidebar -->
+     
       <div class="hover-part"><i class="fa-solid fa-arrow-right arrow"></i></div>
     </aside>
 
@@ -47,9 +57,13 @@
       {{{body}}}
     </main>
 
+<div id="pagination"></div>
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
 {{/if}}
+{{!-- 
+<script type="text/javascript" src="/simplePagination/jquery.js"></script>
+<script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script> --}}
     <footer></footer>
   </body>
 </html>
