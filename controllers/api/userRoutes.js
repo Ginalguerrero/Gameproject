@@ -6,9 +6,10 @@ const auth = require('../../utils/auth');
 router.post('/signup', async (req, res) => {
 	try {
 		const userData = await User.create({
-			user_name: req.body.user_name,
+			user_name: req.body.userLogin,
 			password: req.body.password,
 		});
+
 		req.session.save(() => {
 			// saves the users logged in statue
 			req.session.loggedIn = true;
@@ -27,12 +28,12 @@ router.post('/login', async (req, res) => {
 	try {
 		const userData = await User.findOne({
 			where: {
-				user_name: req.body.user_name,
+				user_name: req.body.userLogin,
 			},
 		});
 
 		const validPassword = await userData.checkPassword(req.body.password);
-
+		
 		if (!validPassword || !userData) {
 			res
 				.status(400)
