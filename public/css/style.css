@@ -113,10 +113,6 @@ aside ul .sidebar {
 	text-decoration: underline;
 }
 
-
-
-
-
 .hover-part {
 	width: 216px;
 	height: 100%;
@@ -220,6 +216,16 @@ main {
 	font-family: var(--gameTitle);
 }
 
+/******************** Pagination ***************************/
+#pagination  {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	font-size: 120%;
+
+}
+
+
 /*********************** Login Page ***********************/
 .center {
 	display: flex;
@@ -305,3 +311,5 @@ form .form-input {
 	background-color: var(--headerTextBoxColor);
 	color: white;
 }
+
+
