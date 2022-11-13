@@ -11,6 +11,7 @@ $(function () {
         items: items,
         itemsOnPage: 18,
         cssStyle: "light-theme",
+		
 		onPageClick: function (pageNumber) {
 			currentPage = pageNumber;
 		}
