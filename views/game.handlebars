@@ -4,6 +4,7 @@
     <img class="primary" id="primary" src="{{game_image}}" alt="{name}}" />
     <div class="info">
       <h2><span class="game_titles">GAME:</span> {{name}}</h2>
+      <p><span class="game_titles" >GameID:</span><span id="gameId">{{id}}</span></p>
       <p><span class="game_titles">Publisher:</span> {{publisher}}</p>
       <p><span class="game_titles">Platforms:</span> {{platform}}</p>
       <p class="game_titles">Categories:</p>
@@ -42,4 +43,17 @@
 
 {{/with}} 
 
+<div class="game_comments" id="addComment">Add Comment</div>
+
+<div id="toggleComment" style = "display:none">
+  <div class="comments_title">
+    <label for="commentText" class="form-label">Comment</label>
+    <input type="text" class="form-control" id="commentText" required>
+  </div>
+  <div class="comments_title">
+    <button type="submit" class="login_button" id="submitComment">Add Comment</button>
+  </div>
+</div>
+
+ <script src="/js/addComment.js"></script>
  <script src="/js/screenshots.js"></script>

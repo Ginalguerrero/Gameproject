@@ -134,7 +134,7 @@ router.get('/genres/:genres', auth, async (req, res) => {
 			genres = 'racing';
 			break;
 		case '6':
-			genres = 'sports';
+			genres = 'sport';
 			break;
 		default:
 			genres = 'not an option';

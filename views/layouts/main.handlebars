@@ -20,6 +20,10 @@
       </a>
       <div class="header-li">
         <ul>
+          {{!-- <div class="">
+            <label for="search" class="form-label">Search Game</label>
+            <input type="text" class="form-control" id="search">
+          </div> --}}
           <a href="/" ><li>Home <i class="fa-brands fa-fort-awesome"></i></li></a>
           {{#if loggedIn}}
           <a href=""><li id="logout">Logout <i class="fa-solid fa-skull-crossbones"></i></li></a>
@@ -91,9 +95,22 @@
 <script src="/js/logout.js"></script>
 {{/if}}
 
-{{!-- 
-<script type="text/javascript" src="/simplePagination/jquery.js"></script>
-<script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script> --}}
     <footer></footer>
   </body>
 </html>
+
+{{!-- jquery autofill links --}}
+ {{!-- <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/gameAutoFill.js"></script>
+<script type="text/javascript" src="/js/games.js"></script> --}}
+
+
+{{!-- links to pagination --}}
+{{!-- <script type="text/javascript" src="/simplePagination/jquery.js"></script>
+<script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script> --}}
+
