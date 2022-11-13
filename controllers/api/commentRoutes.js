@@ -6,8 +6,8 @@ const auth = require('../../utils/auth');
 router.post('/', auth, async (req, res) => {
 	try {
 		const createComment = await Comment.create({
-			comment: req.body.comment,
-			game_id: req.body.game_id,
+			comment: req.body.commentText,
+			game_id: req.body.gameId,
 			// pulls user id from the session when the user logged in
 			user_id: req.session.userId
 		});

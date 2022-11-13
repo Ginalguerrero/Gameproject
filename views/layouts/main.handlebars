@@ -4,11 +4,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4Play</title>
+    {{!-- Fontawesome Link --}}
     <script src="https://kit.fontawesome.com/00f313d45b.js" crossorigin="anonymous"></script>
+    {{!-- Jquery link --}}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    
+    {{!-- TODO: Pagination link --}}
+    {{!-- <link type="text/css" rel="stylesheet" href="simplePagination/simplePagination.css"/> --}}
+    
+    {{!-- In-house CSS --}}
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/game.css">
-    <link type="text/css" rel="stylesheet" href="simplePagination/simplePagination.css"/>
+    <link rel="stylesheet" href="/css/game.css" />
+    <link rel="icon" href="#" />
+    {{!-- Jquery Script --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    {{!-- Jquery functionality Script --}}
+    <script defer type="text/javascript" src="/js/gamesAutoFill.js"></script>
+
+    {{!-- TODO: Links to pagination Script--}}
+    {{!-- <script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script>
+    <script defer type="text/javascript" src="/simplePagination/jquery.js"></script> --}}
   </head>
 
   <body>
@@ -20,6 +37,12 @@
       </a>
       <div class="header-li">
         <ul>
+          <li>
+             <div class="searchGame">
+                <label for="search" class="form-label">Search Games</label>
+                <input class="form-control" id="search" />
+             </div>
+          </li>
           <a href="/" ><li>Home <i class="fa-brands fa-fort-awesome"></i></li></a>
           {{#if loggedIn}}
           <a href=""><li id="logout">Logout <i class="fa-solid fa-skull-crossbones"></i></li></a>
@@ -36,13 +59,13 @@
       <ul>
         <li class="sidebar">Categories
            <div class="dropdown-content">
-              <a href="#">Single-player</a>
-              <a href="#">Multi-player</a>
-              <a href="#">Online Multi-Player</a>
-              <a href="#">Co-op</a>
-              <a href="#">Local Co-op</a>
-              <a href="#">Online Co-op</a>
-              <a href="#">Local Multi-Player</a>
+              <a href="/game/category/1">Single-player</a>
+              <a href="/game/category/2">Multi-player</a>
+              <a href="/game/category/3">Online Multi-Player</a>
+              <a href="/game/category/4">Co-op</a>
+              <a href="/game/category/5">Local Co-op</a>
+              <a href="/game/category/6">Online Co-op</a>
+              <a href="/game/category/7">Local Multi-Player</a>
             </div>
         </li> 
           
@@ -53,27 +76,27 @@
         <li class="sidebar">Genres
           <ul>
             <li class="innerSidebar">
-              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/strategy.jpg"><span class="text-sidebar">Strategy</span></div></a>
+              <a href="/game/genres/1"><div class="genres-container"><img class="img-sidebar" src="/images/strategy.jpg"><span class="text-sidebar">Strategy</span></div></a>
             </li>
             
             <li class="innerSidebar">
-              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/action.jpg"><span class="text-sidebar">Action</span></div></a>
+              <a href="/game/genres/2"><div class="genres-container"><img class="img-sidebar" src="/images/action.jpg"><span class="text-sidebar">Action</span></div></a>
             </li>
 
             <li class="innerSidebar">
-              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/rpg.jpg"><span class="text-sidebar">RPG</span></div></a>
+              <a href="/game/genres/3"><div class="genres-container"><img class="img-sidebar" src="/images/rpg.jpg"><span class="text-sidebar">RPG</span></div></a>
             </li>
 
             <li class="innerSidebar">
-              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/shooter.jpg"><span class="text-sidebar">Shooter</span></div></a>
+              <a href="/game/genres/4"><div class="genres-container"><img class="img-sidebar" src="/images/shooter.jpg"><span class="text-sidebar">Shooter</span></div></a>
             </li>
 
             <li class="innerSidebar">
-              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/racing.jpg"><span class="text-sidebar">Racing</span></div></a>
+              <a href="/game/genres/5"><div class="genres-container"><img class="img-sidebar" src="/images/racing.jpg"><span class="text-sidebar">Racing</span></div></a>
             </li>
 
             <li class="innerSidebar">
-              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/sport.jpeg"></a><span class="text-sidebar">Sports</span></div></a>
+              <a href="/game/genres/6"><div class="genres-container"><img class="img-sidebar" src="/images/sport.jpeg"></a><span class="text-sidebar">Sports</span></div></a>
             </li>
           </ul>
         </li>
@@ -86,14 +109,16 @@
       {{{body}}}
     </main>
 
+
 <div id="pagination"></div>
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
 {{/if}}
 
-{{!-- 
-<script type="text/javascript" src="/simplePagination/jquery.js"></script>
-<script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script> --}}
-    <footer></footer>
+    <footer></footer> 
   </body>
 </html>
+
+
+
+
