@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/game.css">
+    <link type="text/css" rel="stylesheet" href="simplePagination/simplePagination.css"/>
   </head>
 
   <body>
@@ -33,13 +34,51 @@
 
     <aside>
       <ul>
-        <li class="sidebar">Filter</li>
-        <li class="sidebar">Filter</li>
-        <li class="sidebar">Filter</li>
-        <li class="sidebar">Filter</li>
-        <li class="sidebar">Filter</li>
+        <li class="sidebar">Categories
+           <div class="dropdown-content">
+              <a href="#">Single-player</a>
+              <a href="#">Multi-player</a>
+              <a href="#">Online Multi-Player</a>
+              <a href="#">Co-op</a>
+              <a href="#">Local Co-op</a>
+              <a href="#">Online Co-op</a>
+              <a href="#">Local Multi-Player</a>
+            </div>
+        </li> 
+          
+        <li class="sidebar">Platforms
+          <a href="/">PC</a>
+        </li>
+
+        <li class="sidebar">Genres
+          <ul>
+            <li class="innerSidebar">
+              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/strategy.jpg"><span class="text-sidebar">Strategy</span></div></a>
+            </li>
+            
+            <li class="innerSidebar">
+              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/action.jpg"><span class="text-sidebar">Action</span></div></a>
+            </li>
+
+            <li class="innerSidebar">
+              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/rpg.jpg"><span class="text-sidebar">RPG</span></div></a>
+            </li>
+
+            <li class="innerSidebar">
+              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/shooter.jpg"><span class="text-sidebar">Shooter</span></div></a>
+            </li>
+
+            <li class="innerSidebar">
+              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/racing.jpg"><span class="text-sidebar">Racing</span></div></a>
+            </li>
+
+            <li class="innerSidebar">
+              <a href=""><div class="genres-container"><img class="img-sidebar" src="/images/sport.jpeg"></a><span class="text-sidebar">Sports</span></div></a>
+            </li>
+          </ul>
+        </li>
       </ul>
-      <!-- TODO: maybe add a icon to indicate to the user they can hover over the sidebar -->
+     
       <div class="hover-part"><i class="fa-solid fa-arrow-right arrow"></i></div>
     </aside>
 
@@ -47,9 +86,14 @@
       {{{body}}}
     </main>
 
+<div id="pagination"></div>
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
 {{/if}}
+
+{{!-- 
+<script type="text/javascript" src="/simplePagination/jquery.js"></script>
+<script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script> --}}
     <footer></footer>
   </body>
 </html>
