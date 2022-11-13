@@ -107,18 +107,25 @@
 
     <main>
       {{{body}}}
-
     </main>
     
     <div id="pagination"></div>
-{{#if loggedIn}}
-<script src="/js/logout.js"></script>
-{{/if}}
+    {{!-- <div id="pagination" onload="paginationFun()"></div> --}}
+
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
 
     <footer></footer> 
   </body>
 </html>
 
 
-
+{{!-- $(function() {
+    $(pagination).pagination({
+        items: 100,
+        itemsOnPage: 10,
+        cssStyle: 'light-theme'
+    });
+}); --}}
 
