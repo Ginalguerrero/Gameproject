@@ -110,7 +110,15 @@ aside ul .sidebar {
 	text-align: center;
 	font-size: 150%;
 	margin-top: 20px;
+	
+}
+
+.underline{
 	text-decoration: underline;
+}
+
+span.text-sidebar{
+	text-decoration: none;
 }
 
 .hover-part {
@@ -174,7 +182,7 @@ li .innerSidebar > .text-sidebar{
 
 .innerSidebar {
 	margin: 5px 0px;
-	
+	text-decoration: none;
 }
 
 /********************** Games Area Main page************************ */

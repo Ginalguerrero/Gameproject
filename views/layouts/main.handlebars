@@ -23,9 +23,11 @@
     {{!-- Jquery functionality Script --}}
     <script defer type="text/javascript" src="/js/gamesAutoFill.js"></script>
 
-    {{!-- TODO: Links to pagination Script--}}
+    {{!-- Links to pagination Script--}}
     <script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script>
+    {{#if loggedIn}}
     <script defer type="text/javascript" src="/simplePagination/jquery.js"></script>
+    {{/if}}
   </head>
 
   <body>
@@ -57,7 +59,7 @@
 
     <aside>
       <ul>
-        <li class="sidebar">Categories
+        <li class="sidebar underline">Categories
            <div class="dropdown-content">
               <a href="/game/category/1">Single-player</a>
               <a href="/game/category/2">Multi-player</a>
@@ -69,13 +71,13 @@
             </div>
         </li> 
 
-        <li class="sidebar">Platforms
+        <li class="sidebar underline">Platforms
           <div class="dropdown-content">
               <a href="/">PC</a>
           </div>
         </li>
 
-        <li class="sidebar">Genres
+        <li class="sidebar"><span class="underline">Genres</span>
           <ul>
             <li class="innerSidebar">
               <a href="/game/genres/1"><div class="genres-container"><img class="img-sidebar" src="/images/strategy.jpg"><span class="text-sidebar">Strategy</span></div></a>
@@ -105,10 +107,10 @@
 
     <main>
       {{{body}}}
+
     </main>
-
-
-<div id="pagination"></div>
+    
+    <div id="pagination"></div>
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
 {{/if}}
