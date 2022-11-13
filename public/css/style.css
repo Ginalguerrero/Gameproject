@@ -71,10 +71,13 @@ header {
 }
 
 #search{
-	width: 200px;
+	width: 225px;
 	background-color:var(--textColor);
 	color: black;
+	border-radius: 12px;
+	padding-left: 8px;
 }
+
 
 /************************ side bar ************************/
 aside {
@@ -91,6 +94,7 @@ aside {
 	color: var(--textColor);
 	font-family: var(--textDescription);
 	border-right: 0.5px solid rgba(255, 255, 255, 0.525);
+	
 }
 
 aside:hover {
@@ -106,6 +110,15 @@ aside ul .sidebar {
 	text-align: center;
 	font-size: 150%;
 	margin-top: 20px;
+	
+}
+
+.underline{
+	text-decoration: underline;
+}
+
+span.text-sidebar{
+	text-decoration: none;
 }
 
 .hover-part {
@@ -113,7 +126,7 @@ aside ul .sidebar {
 	height: 100%;
 	display: flex;
 	justify-content: flex-end;
-	align-items: center;
+	padding-top: 10px;
 }
 
 .arrow {
@@ -129,17 +142,22 @@ aside ul .sidebar {
 	background-color: var(--backgroundColor);
 	min-width: 180px;
 	z-index: 1;
+	left:5px;
+	
 }
 
 .dropdown-content a {
 	color: var(--textColor);
 	text-decoration: none;
 	display: block;
+	padding: 10px 0px;
 }
 
 .sidebar:hover .dropdown-content {
 	display: block;
 }
+
+
 
 .genres-container {
 	display: flex;
@@ -156,10 +174,15 @@ aside ul .sidebar {
 	padding-top: 16px;
 	font-weight: bolder;
 	font-family: var(--textDescription);
+	
+}
+li .innerSidebar > .text-sidebar{
+	text-decoration: none;
 }
 
 .innerSidebar {
 	margin: 5px 0px;
+	text-decoration: none;
 }
 
 /********************** Games Area Main page************************ */
@@ -200,6 +223,16 @@ main {
 	color: #fafafa;
 	font-family: var(--gameTitle);
 }
+
+/******************** Pagination ***************************/
+#pagination  {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	font-size: 120%;
+
+}
+
 
 /*********************** Login Page ***********************/
 .center {
@@ -286,3 +319,5 @@ form .form-input {
 	background-color: var(--headerTextBoxColor);
 	color: white;
 }
+
+

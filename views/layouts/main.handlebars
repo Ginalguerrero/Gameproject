@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     
     {{!-- TODO: Pagination link --}}
-    {{!-- <link type="text/css" rel="stylesheet" href="simplePagination/simplePagination.css"/> --}}
+    <link type="text/css" rel="stylesheet" href="simplePagination/simplePagination.css"/>
     
     {{!-- In-house CSS --}}
     <link rel="stylesheet" href="/css/reset.css" />
@@ -23,9 +23,11 @@
     {{!-- Jquery functionality Script --}}
     <script defer type="text/javascript" src="/js/gamesAutoFill.js"></script>
 
-    {{!-- TODO: Links to pagination Script--}}
-    {{!-- <script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script>
-    <script defer type="text/javascript" src="/simplePagination/jquery.js"></script> --}}
+    {{!-- Links to pagination Script--}}
+    <script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script>
+    {{#if loggedIn}}
+    <script defer type="text/javascript" src="/simplePagination/jquery.js"></script>
+    {{/if}}
   </head>
 
   <body>
@@ -57,7 +59,7 @@
 
     <aside>
       <ul>
-        <li class="sidebar">Categories
+        <li class="sidebar underline">Categories
            <div class="dropdown-content">
               <a href="/game/category/1">Single-player</a>
               <a href="/game/category/2">Multi-player</a>
@@ -68,19 +70,21 @@
               <a href="/game/category/7">Local Multi-Player</a>
             </div>
         </li> 
-          
-        <li class="sidebar">Platforms
-          <a href="/">PC</a>
+
+        <li class="sidebar underline">Platforms
+          <div class="dropdown-content">
+              <a href="/">PC</a>
+          </div>
         </li>
 
-        <li class="sidebar">Genres
+        <li class="sidebar"><span class="underline">Genres</span>
           <ul>
             <li class="innerSidebar">
               <a href="/game/genres/1"><div class="genres-container"><img class="img-sidebar" src="/images/strategy.jpg"><span class="text-sidebar">Strategy</span></div></a>
             </li>
             
             <li class="innerSidebar">
-              <a href="/game/genres/2"><div class="genres-container"><img class="img-sidebar" src="/images/action.jpg"><span class="text-sidebar">Action</span></div></a>
+              <a href="/game/genres/2"><div class="genres-container"><img class="img-sidebar" src="/images/shooter.jpg"><span class="text-sidebar">Action</span></div></a>
             </li>
 
             <li class="innerSidebar">
@@ -88,15 +92,11 @@
             </li>
 
             <li class="innerSidebar">
-              <a href="/game/genres/4"><div class="genres-container"><img class="img-sidebar" src="/images/shooter.jpg"><span class="text-sidebar">Shooter</span></div></a>
+              <a href="/game/genres/4"><div class="genres-container"><img class="img-sidebar" src="/images/racing.jpg"><span class="text-sidebar">Racing</span></div></a>
             </li>
 
             <li class="innerSidebar">
-              <a href="/game/genres/5"><div class="genres-container"><img class="img-sidebar" src="/images/racing.jpg"><span class="text-sidebar">Racing</span></div></a>
-            </li>
-
-            <li class="innerSidebar">
-              <a href="/game/genres/6"><div class="genres-container"><img class="img-sidebar" src="/images/sport.jpeg"></a><span class="text-sidebar">Sports</span></div></a>
+              <a href="/game/genres/5"><div class="genres-container"><img class="img-sidebar" src="/images/sport.jpeg"><span class="text-sidebar">Sports</span></div></a>
             </li>
           </ul>
         </li>
@@ -108,17 +108,24 @@
     <main>
       {{{body}}}
     </main>
+    
+    <div id="pagination"></div>
+    {{!-- <div id="pagination" onload="paginationFun()"></div> --}}
 
-
-<div id="pagination"></div>
-{{#if loggedIn}}
-<script src="/js/logout.js"></script>
-{{/if}}
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
 
     <footer></footer> 
   </body>
 </html>
 
 
-
+{{!-- $(function() {
+    $(pagination).pagination({
+        items: 100,
+        itemsOnPage: 10,
+        cssStyle: 'light-theme'
+    });
+}); --}}
 

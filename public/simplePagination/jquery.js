@@ -1,10 +1,46 @@
-$(function() {
-    $(pagination).pagination({
-        items: 100,
-        itemsOnPage: 10,
-        cssStyle: 'light-theme'
+// var currentPage = 1;
+$(function () {
+  fetch("/game/name")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (names) {
+      let items = names.length;
+      console.log(items);
+      $(pagination).pagination({
+        items: items,
+        itemsOnPage: 18,
+        cssStyle: "light-theme",
+		
+		onPageClick: function (pageNumber) {
+			currentPage = pageNumber;
+		}
+			
+      });
     });
 });
+
+
+
+
+// $(function() {
+//     $(#pagination).pagination('getCurrentPage');
+// });
+
+// $(function() {
+//     $('#pagination').pagination('selectPage', pageNumber);
+// });
+
+// $(function() {
+//     $('#pagination').pagination('prevPage');
+// });
+
+// $(function() {
+//     $('#pagination').pagination('nextPage');
+// });
+
+
+
 /*
 function handlePagination(totalNumber, searchInputResult, searchInputOneResult) {
 	if(totalNumber===0){
