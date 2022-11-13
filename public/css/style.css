@@ -83,7 +83,7 @@ header {
 aside {
 	position: fixed;
 	top: 100px;
-	/* left: -180px; */
+	left: -180px;
 	width: 220px;
 	height: 100%;
 	transition: all 500ms;
@@ -101,11 +101,6 @@ aside:hover {
 	left: 0;
 }
 
-/* TODO: add this if time */
-/* aside:hover aside ul .sidebar {
-	border-bottom: 0.5px solid rgba(255, 255, 255, 0.525);
-} */
-
 aside ul {
 	display: block;
 	justify-content: space-between;
@@ -115,10 +110,12 @@ aside ul .sidebar {
 	text-align: center;
 	font-size: 150%;
 	margin-top: 20px;
-	border: 0.5px solid;
-    border-radius: 20px;
-	
+	text-decoration: underline;
 }
+
+
+
+
 
 .hover-part {
 	width: 216px;
@@ -173,10 +170,15 @@ aside ul .sidebar {
 	padding-top: 16px;
 	font-weight: bolder;
 	font-family: var(--textDescription);
+	
+}
+li .innerSidebar > .text-sidebar{
+	text-decoration: none;
 }
 
 .innerSidebar {
 	margin: 5px 0px;
+	
 }
 
 /********************** Games Area Main page************************ */
