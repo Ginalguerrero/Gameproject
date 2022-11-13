@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/game.css">
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <link type="text/css" rel="stylesheet" href="simplePagination/simplePagination.css"/>
   </head>
 
@@ -20,10 +24,6 @@
       </a>
       <div class="header-li">
         <ul>
-          {{!-- <div class="">
-            <label for="search" class="form-label">Search Game</label>
-            <input type="text" class="form-control" id="search">
-          </div> --}}
           <a href="/" ><li>Home <i class="fa-brands fa-fort-awesome"></i></li></a>
           {{#if loggedIn}}
           <a href=""><li id="logout">Logout <i class="fa-solid fa-skull-crossbones"></i></li></a>
@@ -90,24 +90,34 @@
       {{{body}}}
     </main>
 
+    {{!-- <div class="searchgame">
+      <label style= "color:aliceblue" for="search" class="form-label">Search Game</label>
+      <input style= "background-color:aliceblue"type="text" class="form-control" id="search" />
+    </div> --}}
+
 <div id="pagination"></div>
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
 {{/if}}
-
-    <footer></footer>
+{{!-- jquery autofill links --}}
+ 
+{{!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/gameAutoFill.js"></script>
+<script type="text/javascript" src="/js/games.js"></script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <footer>dsfasdf</footer> --}}
   </body>
 </html>
 
-{{!-- jquery autofill links --}}
- {{!-- <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    />
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="/js/gameAutoFill.js"></script>
-<script type="text/javascript" src="/js/games.js"></script> --}}
+
 
 
 {{!-- links to pagination --}}
