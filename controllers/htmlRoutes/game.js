@@ -77,53 +77,78 @@ router.get('/category/:category', auth, async (req, res) => {
 });
 
 // Returns Game By Publisher
-router.get('/publisher/:publisher', auth, async (req, res) => {
-	try {
-		const games = await GameData.findAll({
-			where: {
-				publisher: req.params.publisher,
-			},
-		});
-		const displayGames = games.map((game) => game.get({ plain: true }));
-		res.render('', {
-			displayGames,
-			loggedIn: req.session.loggedIn,
-		});
-	} catch (err) {
-		console.log(err);
-		res.status(500).json(err);
-	}
-});
+// router.get('/publisher/:publisher', auth, async (req, res) => {
+// 	try {
+// 		const games = await GameData.findAll({
+// 			where: {
+// 				publisher: req.params.publisher,
+// 			},
+// 		});
+// 		const displayGames = games.map((game) => game.get({ plain: true }));
+// 		res.render('', {
+// 			displayGames,
+// 			loggedIn: req.session.loggedIn,
+// 		});
+// 	} catch (err) {
+// 		console.log(err);
+// 		res.status(500).json(err);
+// 	}
+// });
 
 // Returns Game Platforms
-router.get('/publisher/:platform', auth, async (req, res) => {
-	try {
-		const games = await GameData.findAll({
-			where: {
-				platform: req.params.platform,
-			},
-		});
-		const displayGames = games.map((game) => game.get({ plain: true }));
-		res.render('', {
-			displayGames,
-			loggedIn: req.session.loggedIn,
-		});
-	} catch (err) {
-		console.log(err);
-		res.status(500).json(err);
-	}
-});
+// router.get('/publisher/:platform', auth, async (req, res) => {
+// 	try {
+// 		const games = await GameData.findAll({
+// 			where: {
+// 				platform: req.params.platform,
+// 			},
+// 		});
+// 		const displayGames = games.map((game) => game.get({ plain: true }));
+// 		res.render('', {
+// 			displayGames,
+// 			loggedIn: req.session.loggedIn,
+// 		});
+// 	} catch (err) {
+// 		console.log(err);
+// 		res.status(500).json(err);
+// 	}
+// });
 
 // Returns Game Genres
 router.get('/genres/:genres', auth, async (req, res) => {
+	let genres;
+	switch (req.params.genres) {
+		case '1':
+			genres = 'strategy';
+			break;
+		case '2':
+			genres = 'action';
+			break;
+		case '3':
+			genres = 'rpg';
+			break;
+		case '4':
+			genres = 'shooter';
+			break;
+		case '5':
+			genres = 'racing';
+			break;
+		case '6':
+			genres = 'sports';
+			break;
+		default:
+			genres = 'not an option';
+	}
+
 	try {
-		const games = await GameData.findAll({
-			where: {
-				genres: req.params.genres,
-			},
-		});
-		const displayGames = games.map((game) => game.get({ plain: true }));
-		res.render('', {
+		const displayGames = await sequelize.query(
+			'SELECT * FROM gamedata WHERE genres LIKE :genres',
+			{
+			  replacements: { genres: `%${genres}%` },
+			  type: QueryTypes.SELECT
+			}
+		  );
+		res.render('home', {
 			displayGames,
 			loggedIn: req.session.loggedIn,
 		});
