@@ -83,7 +83,7 @@ header {
 aside {
 	position: fixed;
 	top: 100px;
-	left: -180px;
+	/* left: -180px; */
 	width: 220px;
 	height: 100%;
 	transition: all 500ms;
@@ -94,11 +94,17 @@ aside {
 	color: var(--textColor);
 	font-family: var(--textDescription);
 	border-right: 0.5px solid rgba(255, 255, 255, 0.525);
+	
 }
 
 aside:hover {
 	left: 0;
 }
+
+/* TODO: add this if time */
+/* aside:hover aside ul .sidebar {
+	border-bottom: 0.5px solid rgba(255, 255, 255, 0.525);
+} */
 
 aside ul {
 	display: block;
@@ -109,6 +115,9 @@ aside ul .sidebar {
 	text-align: center;
 	font-size: 150%;
 	margin-top: 20px;
+	border: 0.5px solid;
+    border-radius: 20px;
+	
 }
 
 .hover-part {
@@ -116,7 +125,7 @@ aside ul .sidebar {
 	height: 100%;
 	display: flex;
 	justify-content: flex-end;
-	align-items: center;
+	padding-top: 10px;
 }
 
 .arrow {
@@ -132,17 +141,22 @@ aside ul .sidebar {
 	background-color: var(--backgroundColor);
 	min-width: 180px;
 	z-index: 1;
+	left:5px;
+	
 }
 
 .dropdown-content a {
 	color: var(--textColor);
 	text-decoration: none;
 	display: block;
+	padding: 10px 0px;
 }
 
 .sidebar:hover .dropdown-content {
 	display: block;
 }
+
+
 
 .genres-container {
 	display: flex;
