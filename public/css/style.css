@@ -71,10 +71,13 @@ header {
 }
 
 #search{
-	width: 200px;
+	width: 225px;
 	background-color:var(--textColor);
 	color: black;
+	border-radius: 12px;
+	padding-left: 8px;
 }
+
 
 /************************ side bar ************************/
 aside {
