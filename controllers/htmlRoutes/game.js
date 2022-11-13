@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const {QueryTypes} = require('sequelize');
+const { QueryTypes } = require('sequelize');
 const { GameData, Comment, User, ScreenShots } = require('../../models');
 const auth = require('../../utils/auth');
 
@@ -26,6 +26,18 @@ router.get('/:id', auth, async (req, res) => {
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
+	}
+});
+
+router.get('/name', async (req, res) => {
+	try {
+		const gameNames = await GameData.findAll({
+			attributes: ['name'],
+		});
+		console.log(gameNames.get({ plain: true }));
+		res.json(gameNames);
+	} catch (err) {
+		res.json(err);
 	}
 });
 
@@ -62,10 +74,10 @@ router.get('/category/:category', auth, async (req, res) => {
 		const displayGames = await sequelize.query(
 			'SELECT * FROM gamedata WHERE categories LIKE :categories',
 			{
-			  replacements: { categories: `%${category}%` },
-			  type: QueryTypes.SELECT
+				replacements: { categories: `%${category}%` },
+				type: QueryTypes.SELECT,
 			}
-		  );
+		);
 		res.render('home', {
 			displayGames,
 			loggedIn: req.session.loggedIn,
@@ -75,44 +87,6 @@ router.get('/category/:category', auth, async (req, res) => {
 		res.status(500).json(err);
 	}
 });
-
-// Returns Game By Publisher
-// router.get('/publisher/:publisher', auth, async (req, res) => {
-// 	try {
-// 		const games = await GameData.findAll({
-// 			where: {
-// 				publisher: req.params.publisher,
-// 			},
-// 		});
-// 		const displayGames = games.map((game) => game.get({ plain: true }));
-// 		res.render('', {
-// 			displayGames,
-// 			loggedIn: req.session.loggedIn,
-// 		});
-// 	} catch (err) {
-// 		console.log(err);
-// 		res.status(500).json(err);
-// 	}
-// });
-
-// Returns Game Platforms
-// router.get('/publisher/:platform', auth, async (req, res) => {
-// 	try {
-// 		const games = await GameData.findAll({
-// 			where: {
-// 				platform: req.params.platform,
-// 			},
-// 		});
-// 		const displayGames = games.map((game) => game.get({ plain: true }));
-// 		res.render('', {
-// 			displayGames,
-// 			loggedIn: req.session.loggedIn,
-// 		});
-// 	} catch (err) {
-// 		console.log(err);
-// 		res.status(500).json(err);
-// 	}
-// });
 
 // Returns Game Genres
 router.get('/genres/:genres', auth, async (req, res) => {
@@ -144,10 +118,10 @@ router.get('/genres/:genres', auth, async (req, res) => {
 		const displayGames = await sequelize.query(
 			'SELECT * FROM gamedata WHERE genres LIKE :genres',
 			{
-			  replacements: { genres: `%${genres}%` },
-			  type: QueryTypes.SELECT
+				replacements: { genres: `%${genres}%` },
+				type: QueryTypes.SELECT,
 			}
-		  );
+		);
 		res.render('home', {
 			displayGames,
 			loggedIn: req.session.loggedIn,

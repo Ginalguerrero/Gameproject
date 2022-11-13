@@ -24,7 +24,7 @@ const loginHandler = async () => {
 // ############################### Sign up ###############################
 const signupHandler = async () => {
     const userLogin = document.querySelector('#userName').value.trim();
-    const password = document.querySelector('#passowrd-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
 
     if (userLogin && password) {
         const response = await fetch('api/user/signup', {

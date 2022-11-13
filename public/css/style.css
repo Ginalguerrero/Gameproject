@@ -121,7 +121,7 @@ aside ul .sidebar {
 	color: var(--textColor);
 }
 
-/* --------------------- side bar elements   ----------------*/
+/*********************** side bar elements  ***********************/
 
 .dropdown-content {
 	display: none;
@@ -162,7 +162,7 @@ aside ul .sidebar {
 	margin: 5px 0px;
 }
 
-/* ******************** game divs************************ */
+/********************** Games Area Main page************************ */
 main {
 	margin-top: 145px;
 }
@@ -195,14 +195,13 @@ main {
 }
 
 .games h2 {
-	/* login-page */
 	margin: 90px 10px;
 	font-size: 2rem;
 	color: #fafafa;
 	font-family: var(--gameTitle);
 }
 
-/*================= Login Page ========================*/
+/*********************** Login Page ***********************/
 .center {
 	display: flex;
 	align-content: center;
