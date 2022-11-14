@@ -1,6 +1,6 @@
 const games = [];
 const gameIds = [];
-const searchResult = document.querySelector('#search');
+const searchResult = document.querySelector('.search');
 
 function getGameNames() {
 	fetch('/game/name')
@@ -13,7 +13,7 @@ function getGameNames() {
 				gameIds.push(name.id);
 			});
 		});
-	$('#search').autocomplete({
+	$('.search').autocomplete({
 		source: games,
 	});
 }
@@ -43,4 +43,4 @@ searchResult.addEventListener('keydown', async (event) => {
 	}
 });
 
-$('#search').on('click', getGameNames);
+$('.search').on('click', getGameNames);
