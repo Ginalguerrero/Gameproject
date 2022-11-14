@@ -1,6 +1,17 @@
 {{#with game}}
 <div class="images">
+    {{!-- Overerlay star ratings on game image --}}
   <div class="container-image">
+    <div class="rating-container">
+      {{!-- {{#renderStars rating}} --}}
+      {{rating}}<span>{{game.rating}} {{checked.rating}}</span>
+      <span class="fa fa-star" id="star-1"></span>
+      <span class="fa fa-star" id="star-2"></span>
+      <span class="fa fa-star" id="star-3"></span>
+      <span class="fa fa-star" id="star-4"></span>
+      <span class="fa fa-star" id="star-5"></span>
+      {{!-- {{/renderStars}} --}}
+    </div>
     <img class="primary" id="primary" src="{{game_image}}" alt="{name}}" />
     <div class="info">
       <h2><span class="game_titles">GAME:</span> {{name}}</h2>
