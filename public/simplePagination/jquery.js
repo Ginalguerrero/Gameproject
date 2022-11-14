@@ -9,7 +9,7 @@ $(function () {
       let items = names.length;
       $('#pagination').pagination({
         items: items,
-        itemsOnPage: 18,
+        itemsOnPage: 20,
         cssStyle: "light-theme",
 		currentPage: currentPage,
 		onPageClick: function (pageNumber) {
