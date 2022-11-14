@@ -1,5 +1,30 @@
-let currentPage = 1;
-let items;
+// jQuery(function async($) {
+//   fetch("/game")
+//       .then(function (response) {
+//         return response.json();
+//       })
+//       .then(function (games) {
+//         let displayedGames = games;
+//         let numPages = displayedGames.length;
+//         let perPage = 20;
+//         pageParts.slice(perPage).hide();
+//         $('#page-nav').pagination({
+//           items: numPages,
+//           itemsOnPage: perPage,
+//           cssStyle: "light-theme",
+//   		onPageClick: function (pageNum) {
+//         let start = perPage * (pageNum - 1);
+//         let end = start + perPage;
+//         pageParts.hide()
+//         .slice(start, end).show();
+//   		}	
+//         });
+//       });
+// });
+
+let window = window.location.href.split('/');
+let currentPage = parseInt(window[window.length - 1]);
+
 $(function () {
   fetch("/game/name")
     .then(function (response) {
@@ -12,7 +37,11 @@ $(function () {
         itemsOnPage: 20,
         cssStyle: "light-theme",
 		currentPage: currentPage,
-		onPageClick: function (pageNumber) {
+		onPageClick: function (pageNumber, event) {
+      event.preventDefault();
+      console.log(currentPage);
+      console.log(pageNumber);
+		
 			currentPage = pageNumber;
 		}	
       });
@@ -22,7 +51,7 @@ $(function () {
 // function recallPagination(){
 // 	$('#pagination').pagination({
 //         items: items,
-//         itemsOnPage: 18,
+//         itemsOnPage: 20,
 //         cssStyle: "light-theme",
 // 		currentPage: currentPage,
 // 		onPageClick: function (pageNumber) {
@@ -45,54 +74,4 @@ $(function () {
 // }
 
 
-
-// $(function() {
-//     $(#pagination).pagination('getCurrentPage');
-// });
-
-// $(function() {
-//     $('#pagination').pagination('selectPage', pageNumber);
-// });
-
-// $(function() {
-//     $('#pagination').pagination('prevPage');
-// });
-
-// $(function() {
-//     $('#pagination').pagination('nextPage');
-// });
-
-
-
-/*
-function handlePagination(totalNumber, searchInputResult, searchInputOneResult) {
-
-	else{
-		$(paginator).pagination({ 
-			items: totalNumber,
-			itemsOnPage: showApiPerPage,
-			currentPage: currentPage,
-			onPageClick: function (pageNumber, event) {
-				currentPage = pageNumber;
-				getJobsAPI (searchInputResult, searchInputOneResult); }
-	 	});
-	}
-}
-
-function getJobsAPI (searchInputResult, searchInputOneResult) {
-
-
-	fetch(jobsApiUrl)
-		.then(response => response.json())
-		.then(response => {
-			switchPage (false);
-			var dataList = response.results;
-			var totalNumber = response.count;
-			displayVacancyResult (dataList);
-			generateHistoryRecord (searchInputResult, searchInputOneResult);
-			handlePagination(totalNumber, searchInputResult, searchInputOneResult);
-		})
-		.catch(err => console.error(err));
-}
-
-*/
+// displayPagination();

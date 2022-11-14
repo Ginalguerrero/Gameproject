@@ -25,7 +25,12 @@ const commentFormHandler = async (event) => {
 			addComment();
 			document.location.replace('/');
 		} else {
-			alert('Failed to create comment.');
+			swal({
+                title: "No Luck :(",
+                text: "Please try again later",
+                icon: "warning",
+                dangerMode: true,
+              });
 		}
 	}
 };
