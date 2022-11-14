@@ -1,6 +1,46 @@
 {{#with game}}
 <div class="images">
-  <div class="container-image">
+        <div class="main-img">
+        <img src="{{game_image}}" alt="{{name}}" />
+        <div class="overlay">
+          <div class="info">
+            <div class="left-box">
+              <div class="single">
+                <h3>Publisher:</h3>
+                <p>{{publisher}}</p>
+              </div>
+
+              <div class="single">
+                <h3>Platform:</h3>
+                <p>{{platforms}}</p>
+              </div>
+              <div>
+                <h3>Categories:</h3>
+                <ul>
+                  {{{format_list categories}}}
+                </ul>
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="right-box">
+              <div>
+                <h3>Genres:</h3>
+                <ul>
+                  {{{format_list genres}}}
+                </ul>
+              </div>
+              <div>
+                <h3>Game Types:</h3>
+                <ul>
+                  {{{format_list game_type}}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  {{!-- <div class="container-image">
     <img class="primary" id="primary" src="{{game_image}}" alt="{name}}" />
     <div class="info">
       <h2><span class="game_titles">GAME:</span> {{name}}</h2>
@@ -20,7 +60,7 @@
         {{{format_list game_type}}}
       </div>
     </div>
-  </div>
+  </div> --}}
 <div id="screenShots">
     {{#each screenshots as |image|}}
       <img src="{{image.img_url}}" alt="{{name}}" />
