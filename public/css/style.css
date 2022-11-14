@@ -395,9 +395,64 @@ form .form-input {
   max-width: max-content;
 }
 
-/* .img-sidebar {
-	max-width: 60px;
-	max-height: 45px;
-	min-height: 45px;
-	margin: 5px 10px;
-} */
+/*################## media Query Screen ######################*/
+
+@media screen and (max-width:1150px) {
+	header {
+		flex-wrap: wrap;
+	}
+
+	.searchGame{
+		display: none;
+	}
+
+	.searchSide{
+		display:inline;
+	}
+
+	.logo {
+		max-width:62px;
+		max-height: 55px;
+	}	
+
+	.logo_name h1 {
+		font-size: 85%;
+	}
+
+	.games div {
+		width: 225px;
+		height: 300px;
+
+	}
+}
+@media screen and (max-width:620px) {
+	.logo {
+		max-width:47px;
+		max-height: 42px;
+	}	
+	.logo_name h1 {
+		font-size: 60%;
+	}
+
+	header{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+@media screen and (max-width:545px) {
+	/* .logo_name h1{
+		display: none;
+	} */
+
+	.logo {
+		max-width:47px;
+		max-height: 42px;
+	}
+
+	a>li>spam{
+		display: none;
+	}
+}
+

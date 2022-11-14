@@ -22,12 +22,6 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     {{!-- Jquery functionality Script --}}
     <script defer type="text/javascript" src="/js/gamesAutoFill.js"></script>
-
-    {{!-- Links to pagination Script--}}
-    <script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script>
-    {{#if loggedIn}}
-    <script defer type="text/javascript" src="/simplePagination/jquery.js"></script>
-    {{/if}}
   </head>
 
   <body>
@@ -104,9 +98,8 @@
       </ul>
      
       <div class="hover-part"><i class="fa-solid fa-arrow-right arrow"></i></div>
-      {{!-- This is the serach for the sidebar --}}
+      {{!-- This is the search for the sidebar --}}
              <div class="searchGame-side">
-                {{!-- <label for="searchsid" class="form-label"></label> --}}
                 <input class="form-control searchSide" id="search" placeholder="Search Games" />
              </div>
     </aside>
@@ -114,9 +107,6 @@
     <main>
       {{{body}}}
     </main>
-    
-    <div id="pagination"></div>
-    {{!-- <div id="pagination" onload="paginationFun()"></div> --}}
 
     {{#if loggedIn}}
       <script src="/js/logout.js"></script>
@@ -126,12 +116,4 @@
   </body>
 </html>
 
-
-{{!-- $(function() {
-    $(pagination).pagination({
-        items: 100,
-        itemsOnPage: 10,
-        cssStyle: 'light-theme'
-    });
-}); --}}
 
