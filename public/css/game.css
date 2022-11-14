@@ -85,3 +85,7 @@
     color:aliceblue;
 	margin-left: 20px;
 }
+
+.checked {
+    color: orange;
+}
