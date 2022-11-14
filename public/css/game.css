@@ -9,7 +9,6 @@
   font-family: var(--gameTitle);
 }
 
-
 images img {
   width: 80%;
   object-fit: cover;
@@ -76,6 +75,18 @@ images img {
   font-size: 1.1rem;
 }
 
+.rating {
+  margin: 30px 80px;
+  font: 1.1rem/1.3rem var(--gameRating);
+  color: #fafafa;
+}
+.star {
+  color: yellow;
+  font-size: 20px;
+}
+.checked {
+  color: gold;
+}
 
 .description {
   margin: 30px 80px;
@@ -87,7 +98,7 @@ images img {
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: underline;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 .game_comments {
   display: flex;
@@ -98,7 +109,7 @@ images img {
   line-height: 1.2rem;
   color: #fafafa;
   padding: 10px;
-  font-family: var(--gameTitle) 
+  font-family: var(--gameTitle);
 }
 
 .game_comments span {
@@ -109,16 +120,22 @@ images img {
   background-color: aliceblue;
   font-weight: bold;
   border: solid 5px black;
+  font-family: var(--gameTitle);
 }
 #addComment {
   width: 90%;
   display: flex;
   justify-content: center;
+  font-size: large;
+  font-family: var(--gameTitle);
+
 }
 
 #addComment:hover {
   box-shadow: 7px 7px 10px #000000d6;
   cursor: pointer;
+  color: #e60000
+  
 }
 
 #toggleComment {

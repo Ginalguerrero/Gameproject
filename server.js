@@ -1,13 +1,28 @@
-const path = require('path');
-require('dotenv').config();
-const express = require('express');
-const session = require('express-session');
-const exphbs = require('express-handlebars');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const path = require("path");
+require("dotenv").config();
+const express = require("express");
+const session = require("express-session");
 
-const routes = require('./controllers');
-const sequelize = require('./config/connection');
-const helpers = require('./utils/helpers');
+// Hanlerbards config files
+// const config = {
+//   helpers: {
+//     renderStars: (rating) => {
+//       let result = "";
+//       for (let i = 1; i <= 5; i++) {
+//         let checked = rating >= i ? " checked" : "";
+//         result += `<span class='fa fa-star${checked}'></span>`;
+//       }
+//       return result;
+//     },
+//   },
+// };
+
+const exphbs = require("express-handlebars");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
+const routes = require("./controllers");
+const sequelize = require("./config/connection");
+const helpers = require("./utils/helpers");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,9 +31,9 @@ const sess = {
   secret: "crazy secret Password",
   cookie: {
     maxAge: 300000,
-    httpOnly: false, 
+    httpOnly: false,
     secure: false,
-    sameSite: 'strict'
+    sameSite: "strict",
   },
   resave: false,
   saveUninitialized: true,
@@ -31,15 +46,17 @@ app.use(session(sess));
 
 const hbs = exphbs.create({ helpers });
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`));
+  app.listen(PORT, () =>
+    console.log(`App listening at http://localhost:${PORT}`)
+  );
 });
