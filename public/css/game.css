@@ -25,7 +25,7 @@
 }
 
 images img {
-    width: 80%;
+  width: 80%;
   object-fit: cover;
 }
 /*test*/
@@ -39,7 +39,7 @@ images img {
   background: rgba(0, 0, 0, 0.921);
   opacity: 0;
   transition: all 600ms;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .info {
@@ -92,7 +92,6 @@ images img {
 .main-img:hover .overlay {
   opacity: 1;
   background-attachment: fixed;
-
 }
 
 .description {
@@ -115,7 +114,7 @@ images img {
 .comments_title {
   background-color: aliceblue;
   font-weight: bold;
-  border: solid 2px black;
+  border: solid 5px black;
 }
 #addComment {
   width: 90%;
@@ -130,14 +129,16 @@ images img {
 #toggleComment {
   width: 90%;
   border: solid 2px black;
+  margin: 30px 80px;
 }
 #toggleComment label {
   font-size: x-large;
+  display: block;
 }
 
-#toggleComment input {
+#toggleComment textarea {
   width: 100%;
-  background-color: white;
-  color: black;
-  margin-left: 20px;
+  background-color: var(--headerTextBoxColor);
+  color: #fff;
+  padding: 10px;
 }

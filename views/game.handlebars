@@ -1,66 +1,31 @@
 {{#with game}}
 <div class="images">
-        <div class="main-img">
-        <img id="game_image" src="{{game_image}}" alt="{{name}}" />
-        <div class="overlay">
-          <div class="info">
-            <div class="left-box">
-              <div class="single">
-                <h3>Publisher:</h3>
-                <p>{{publisher}}</p>
-              </div>
-
-              <div class="single">
-                <h3>Platform:</h3>
-                <p>{{platforms}}</p>
-              </div>
-              <div>
-                <h3>Categories:</h3>
-                <ul>
-                  {{{format_list categories}}}
-                </ul>
-              </div>
-            </div>
-            <div class="line"></div>
-            <div class="right-box">
-              <div>
-                <h3>Genres:</h3>
-                <ul>
-                  {{{format_list genres}}}
-                </ul>
-              </div>
-              <div>
-                <h3>Game Types:</h3>
-                <ul>
-                  {{{format_list game_type}}}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-  {{!-- <div class="container-image">
-    <img class="primary" id="primary" src="{{game_image}}" alt="{name}}" />
+  <div class="container-image">
+    <img class="primary" id="primary" src="{{game_image}}" alt="{{name}}" />
     <div class="info">
-      <h2><span class="game_titles">GAME:</span> {{name}}</h2>
-      <p><span class="game_titles" >GameID:</span><span id="gameId">{{id}}</span></p>
-      <p><span class="game_titles">Publisher:</span> {{publisher}}</p>
-      <p><span class="game_titles">Platforms:</span> {{platform}}</p>
-      <p class="game_titles">Categories:</p>
-      <div class="list">
-        {{{format_list categories}}}
+      <div class="info-column">
+
+        <h2><span class="game_titles">GAME:</span> {{name}}</h2>
+        <p><span class="game_titles" >GameID:</span><span id="gameId">{{id}}</span></p>
+        <p><span class="game_titles">Publisher:</span> {{publisher}}</p>
+        <p><span class="game_titles">Platforms:</span> {{platform}}</p>
+        <p class="game_titles">Categories:</p>
+        <ul class="list">
+          {{{format_list categories}}}
+        </ul>
       </div>
-      <p class="game_titles">Genres</p>
-      <div class="list">
-        {{{format_list genres}}}
-      </div>
-      <p class="game_titles">game_type</p>
-      <div class="list">
-        {{{format_list game_type}}}
-      </div>
+      <div class="info-column">
+        <p class="game_titles">Genres</p>
+        <ul class="list">
+          {{{format_list genres}}}
+        </ul>
+        <p class="game_titles">game_type</p>
+        <div class="list">
+          {{{format_list game_type}}}
+        </div>
+      </div>  
     </div>
-  </div> --}}
+  </div> 
 <div id="screenShots">
     {{#each screenshots as |image|}}
     <div class="thumb">
@@ -90,7 +55,7 @@
 <div id="toggleComment" style = "display:none">
   <div class="comments_title">
     <label for="commentText" class="form-label">Comment</label>
-    <input type="text" class="form-control" id="commentText" required>
+    <textarea type="text" class="form-control" id="commentText" rows="5" required></textarea>
   </div>
   <div class="comments_title">
     <button type="submit" class="login_button" id="submitComment">Add Comment</button>
@@ -99,5 +64,4 @@
 
  <script src="/js/addComment.js"></script>
  <script src="/js/screenshots.js"></script>
-
-
+ <script src="/js/ratings.js"></script>

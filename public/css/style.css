@@ -30,6 +30,7 @@ body {
 
 header {
   background-color: var(--headerTextBoxColor);
+  z-index: 999;
   color: var(--textColor);
   height: 100px;
   width: 100%;
@@ -40,7 +41,6 @@ header {
   font-family: var(--gameTitle);
   position: fixed;
   top: 0;
-  z-index: 999;
 }
 
 /*************** logo ***************/
@@ -82,6 +82,7 @@ header {
 /************************ side bar ************************/
 aside {
   position: fixed;
+  z-index: 99;
   top: 100px;
   left: -180px;
   width: 220px;
@@ -94,6 +95,20 @@ aside {
   color: var(--textColor);
   font-family: var(--textDescription);
   border-right: 0.5px solid rgba(255, 255, 255, 0.525);
+}
+
+.searchSide {
+  width: 165px;
+  background-color: var(--textColor);
+  color: black;
+  font-family: var(--gameTitle);
+  border-radius: 12px;
+  padding-left: 4px;
+  height: 40px;
+  margin: 5px 0px;
+  margin-left: 10px;
+  font-size: 25px;
+  display: none;
 }
 
 aside:hover {
@@ -311,17 +326,78 @@ form .form-input {
   background-color: var(--headerTextBoxColor);
   color: white;
 }
-#screenShots {
-  min-width: 300px;
+.container-image {
+  position: relative;
 }
+.container-image .info {
+  color: #fff;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: all 0.2s ease;
+  font-family: verdana;
+}
+.container-image .info .info-column {
+  padding-right: 20px;
+
+  border-right: solid 1px #fff;
+}
+.container-image .info .info-column:last-child {
+  padding-right: 0;
+  padding-left: 20px;
+  border-right: 0;
+}
+.container-image:hover .info {
+  opacity: 1;
+}
+.container-image .info p,
+.container-image .info h2 {
+  margin-bottom: 5px;
+}
+.container-image .info .game_titles {
+  text-decoration: underline;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.container-image .info li {
+  list-style: none;
+  margin-left: 15px;
+}
+
+.container-image #primary {
+  width: 100%;
+  height: 600px;
+}
+#screenShots {
+  min-width: 600px;
+}
+
 #screenShots .thumb {
-  width: 50%;
-  height: 225px;
-  padding-right: 5px;
-  padding-bottom: 5px;
+  width: 280px;
+
   float: left;
+  height: 290px;
+  overflow: hidden;
+  object-fit: contain;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#screenShots .thumb:last-child {
+  padding-right: 0;
 }
 #screenShots .thumb img {
   height: 100%;
   margin: auto;
+  max-width: max-content;
 }
+
+/* .img-sidebar {
+	max-width: 60px;
+	max-height: 45px;
+	min-height: 45px;
+	margin: 5px 10px;
+} */
