@@ -1,5 +1,6 @@
 {{#with game}}
 <div class="images">
+
   <div class="container-image">
     <img class="primary" id="primary" src="{{game_image}}" alt="{{name}}" />
     <div class="info">
@@ -40,6 +41,14 @@
   <p>{{description}}</p>
 </div>
 
+<div class="description">
+  <h3>Price:</h3>
+  <p>$ {{price}}</p>
+</div>
+
+<div class="description">
+  <h3><a href="{{website}}" target="_blank">Website</a></h3>
+</div>
  <div class="comments">
   {{#if comments}}
   {{#each comments}}
