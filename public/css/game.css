@@ -8,21 +8,6 @@
     "header . .";
 }
 
-.main-img {
-  width: 100%;
-  height: fit-content;
-  grid-area: header;
-}
-
-.main-img {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.main-img img {
-  width: 100%;
-}
 
 images img {
   width: 80%;
@@ -89,10 +74,6 @@ images img {
   font-size: 1.1rem;
 }
 
-.main-img:hover .overlay {
-  opacity: 1;
-  background-attachment: fixed;
-}
 
 .description {
   margin: 30px 80px;
