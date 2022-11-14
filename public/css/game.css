@@ -137,3 +137,16 @@
   color: #fff;
   padding: 10px;
 }
+
+/* ############## Media Screen ######################## */
+
+@media screen and (max-width:1150px) {
+  .info {
+    padding: 2% 5%;
+    font-size: 85%;
+  }
+  .info li {
+    font-size: 75%;
+  }
+
+}
