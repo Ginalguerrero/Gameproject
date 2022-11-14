@@ -6,6 +6,7 @@ const auth = require('../../utils/auth');
 
 // Gets all the game names
 router.get('/name', async (req, res) => {
+<<<<<<< HEAD
     try {
         const gameNames = await GameData.findAll({
             attributes: ['name']
@@ -14,6 +15,16 @@ router.get('/name', async (req, res) => {
     } catch (err) {
         res.json(err);
     }
+=======
+	try {
+		const gameNames = await GameData.findAll({
+			attributes: ['name']
+		});
+		res.json(gameNames);
+	} catch (err) {
+		res.json(err);
+	}
+>>>>>>> 1f006e26fa8f3b32639723822cbd1d654cf38431
 });
 
 // Returns Game by user Id includes comments auth
