@@ -6,23 +6,9 @@
   grid-template-areas:
     "header . ."
     "header . .";
+  font-family: var(--gameTitle);
 }
 
-.main-img {
-  width: 100%;
-  height: fit-content;
-  grid-area: header;
-}
-
-.main-img {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.main-img img {
-  width: 100%;
-}
 
 images img {
   width: 80%;
@@ -50,6 +36,7 @@ images img {
   align-items: center;
   gap: 30px;
   padding: 5% 20%;
+  font-family: var(--gameTitle);
 }
 
 .left-box {
@@ -89,17 +76,19 @@ images img {
   font-size: 1.1rem;
 }
 
-.main-img:hover .overlay {
-  opacity: 1;
-  background-attachment: fixed;
-}
 
 .description {
   margin: 30px 80px;
-  line-height: 1.2rem;
+  font: 1.1rem/1.3rem var(--gameTitle);
   color: #fafafa;
 }
 
+.description h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 10px
+}
 .game_comments {
   display: flex;
   justify-content: space-between;
@@ -109,6 +98,11 @@ images img {
   line-height: 1.2rem;
   color: #fafafa;
   padding: 10px;
+  font-family: var(--gameTitle) 
+}
+
+.game_comments span {
+  font-size: 0.8rem;
 }
 
 .comments_title {
@@ -118,17 +112,16 @@ images img {
 }
 #addComment {
   width: 90%;
-  border: solid 2px black;
   display: flex;
   justify-content: center;
 }
+
 #addComment:hover {
-  color: black;
-  background-color: var(--body);
+  box-shadow: 7px 7px 10px #000000d6;
 }
+
 #toggleComment {
   width: 90%;
-  border: solid 2px black;
   margin: 30px 80px;
 }
 #toggleComment label {
