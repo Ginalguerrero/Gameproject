@@ -1,40 +1,36 @@
 {{#with game}}
 <div class="images">
-  {{!-- Overerlay star ratings on game image --}}
   <div class="container-image">
-    <div class="rating-container">
-      {{!-- {{#renderStars rating}} --}}
-      {{rating}}<span>{{game.rating}} {{checked.rating}}</span>
-      <span class="fa fa-star" id="star-1"></span>
-      <span class="fa fa-star" id="star-2"></span>
-      <span class="fa fa-star" id="star-3"></span>
-      <span class="fa fa-star" id="star-4"></span>
-      <span class="fa fa-star" id="star-5"></span>
-      {{!-- {{/renderStars}} --}}
-    </div>
     <img class="primary" id="primary" src="{{game_image}}" alt="{{name}}" />
     <div class="info">
-      <h2><span class="game_titles">GAME:</span> {{name}}</h2>
-      <p><span class="game_titles" >GameID:</span><span id="gameId">{{id}}</span></p>
-      <p><span class="game_titles">Publisher:</span> {{publisher}}</p>
-      <p><span class="game_titles">Platforms:</span> {{platform}}</p>
-      <p class="game_titles">Categories:</p>
-      <div class="list">
-        {{{format_list categories}}}
+      <div class="info-column">
+
+        <h2><span class="game_titles">GAME:</span> {{name}}</h2>
+        <p><span class="game_titles" >GameID:</span><span id="gameId">{{id}}</span></p>
+        <p><span class="game_titles">Publisher:</span> {{publisher}}</p>
+        <p><span class="game_titles">Platforms:</span> {{platform}}</p>
+        <p class="game_titles">Categories:</p>
+        <ul class="list">
+          {{{format_list categories}}}
+        </ul>
       </div>
-      <p class="game_titles">Genres</p>
-      <div class="list">
-        {{{format_list genres}}}
-      </div>
-      <p class="game_titles">game_type</p>
-      <div class="list">
-        {{{format_list game_type}}}
-      </div>
+      <div class="info-column">
+        <p class="game_titles">Genres</p>
+        <ul class="list">
+          {{{format_list genres}}}
+        </ul>
+        <p class="game_titles">game_type</p>
+        <div class="list">
+          {{{format_list game_type}}}
+        </div>
+      </div>  
     </div>
-  </div>
+  </div> 
 <div id="screenShots">
     {{#each screenshots as |image|}}
+    <div class="thumb">
       <img src="{{image.img_url}}" alt="{{name}}" />
+    </div>  
     {{/each}}
 </div>
 
@@ -59,7 +55,7 @@
 <div id="toggleComment" style = "display:none">
   <div class="comments_title">
     <label for="commentText" class="form-label">Comment</label>
-    <input type="text" class="form-control" id="commentText" required>
+    <textarea type="text" class="form-control" id="commentText" rows="5" required></textarea>
   </div>
   <div class="comments_title">
     <button type="submit" class="login_button" id="submitComment">Add Comment</button>
