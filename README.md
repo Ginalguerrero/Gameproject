@@ -55,11 +55,11 @@ add instructions on how to use the project*******
 
 #### picture title
 
-![Home Page](url link)*******
+![Home Page](url link)
 
-#### picture title
+#### Wire frame
 
-![Login Page](url link )*******
+![Wire Frame](./public/images/mainPage.jpg)
 
 ---
 
@@ -73,11 +73,19 @@ code here*******
 
 ```
 
-#### title here
+#### Dynamically displays the image in the main picture window
 
-``` Handlebars
+``` JavaScript
 
-code here*******
+const primary = document.querySelector("#primary");
+const screenshots = document.querySelector("#screenShots");
+
+screenshots.addEventListener('click', (event) => {
+	const source = event.target.getAttribute('src');
+	const description = event.target.getAttribute('alt');
+	primary.setAttribute('src', source);
+	primary.setAttribute('alt', description);
+});
 
 ```
 
