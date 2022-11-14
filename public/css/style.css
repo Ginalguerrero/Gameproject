@@ -342,7 +342,6 @@ form .form-input {
 @media screen and (max-width:1150px) {
 	header {
 		flex-wrap: wrap;
-		background-color:blue ;
 	}
 
 	.searchGame{
