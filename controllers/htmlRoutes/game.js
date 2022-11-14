@@ -4,25 +4,16 @@ const { QueryTypes } = require('sequelize');
 const { GameData, Comment, User, ScreenShots } = require('../../models');
 const auth = require('../../utils/auth');
 
-<<<<<<< HEAD
 // Gets all the game names
 router.get('/name', async (req, res) => {
-	try {
-		const gameNames = await GameData.findAll({
-			attributes: ['name'],
-		});
-=======
-router.get('/name', async (req, res) => {
-	try {
-		const gameNames = await GameData.findAll({
-			attributes: ['name']
-		});
-		console.log(gameNames.get({ plain: true }));
->>>>>>> da8675da72d6d553bedd06fac1fc1a9e95b79618
-		res.json(gameNames);
-	} catch (err) {
-		res.json(err);
-	}
+    try {
+        const gameNames = await GameData.findAll({
+            attributes: ['name']
+        });
+        res.json(gameNames);
+    } catch (err) {
+        res.json(err);
+    }
 });
 
 // Returns Game by user Id includes comments auth
@@ -50,10 +41,6 @@ router.get('/:id', auth, async (req, res) => {
 	}
 });
 
-<<<<<<< HEAD
-=======
-
->>>>>>> da8675da72d6d553bedd06fac1fc1a9e95b79618
 // Returns Game by Category
 router.get('/category/:category', auth, async (req, res) => {
 	let category;

@@ -14,7 +14,14 @@ function getGameNames() {
   $("#search").autocomplete({
     source: games,
   });
+
+  $("#searchside").autocomplete({
+    source: games,
+  });
 }
 
 $('#search').on("click", getGameNames);
+$('#searchside').on("click", getGameNames);
+
+
 
