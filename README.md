@@ -1,10 +1,13 @@
-# Gameproject
+# Gameproject: 4Pplay
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
 
-desctiption of what the project does*******
+We developed the 4Play fullstack web application for users that has a passion for video games. The website allows the user to create an account, check game information, create comments about the games and also, search games by game name, genres and category. Once the user select a game and click on it, we redirect the user to a page, where he will have access for more information and gallery displaying the some screenshots of the game.
+
+While developing this application, we encrypted the user password before sending it to the database, that will make the password more secure, but not only that, while the user is typing the password, the field will display it as dots, so know one can see it. 
+
 
 ---
 
@@ -26,13 +29,28 @@ desctiption of what the project does*******
 
 ## Installation
 
-add instructions on how to set up the project*******
+Our application contain a seed file that will import data to the database, in order to get this information, you will need to follow the steps below:
+
+1. Create a database name:  game_db
+2. Run npm install, so all the npm installation will be ready, including mysql2
+3. Make sure you create a .env file with your information, as the database will need permission to upload the data in the database game_db
+4. Run the command in your terminal: run npm seed This command will add all the database you need in order to test the system.
+5. Run the command in your terminal: npm start, once it is running, than you can access the application from http://localhost:3001
 
 ---
 
 ## Usage
 
-add instructions on how to use the project*******
+The home page will load 20 games to the user, displaying the game name and image. In case the user wants to find more about the game, the user need to sign in on our application. Once the user is successfully signed in it can:
+ * Select a game to read the description
+ * Select a game to see: price, publisher, genres, categories rating and comments
+ * Check games by Genres
+ * Check game  by Category
+ * Search by game name
+ * Add comments to the game
+ * Add rating to the game (0 - 5)
+ * Log out
+
 
 ---
 
@@ -53,39 +71,68 @@ add instructions on how to use the project*******
 
 ## Screenshots
 
-#### picture title
+#### Main Page 
 
-![Home Page](url link)
+![Mock template ](./public/images/mainPage.jpg)
+![Main Page ](./public/images/Game-Homepage.gif)
 
-#### Wire frame
+#### Login Page
 
-![Wire Frame](./public/images/mainPage.jpg)
+![Login Page](./public/images/loginPage.gif )
 
 ---
 
 ## CodeSnippets
 
-#### title here
+#### Dynamically swaps the  image to the main window, displaying it larger.
 
-``` Handlebars
-
-code here*******
-
-```
-
-#### Dynamically displays the image in the main picture window
-
-``` JavaScript
-
+``` 
 const primary = document.querySelector("#primary");
 const screenshots = document.querySelector("#screenShots");
-
 screenshots.addEventListener('click', (event) => {
-	const source = event.target.getAttribute('src');
-	const description = event.target.getAttribute('alt');
-	primary.setAttribute('src', source);
-	primary.setAttribute('alt', description);
+    const source = event.target.getAttribute('src');
+    const description = event.target.getAttribute('alt');
+    primary.setAttribute('src', source);
+    primary.setAttribute('alt', description);
 });
+```
+#### Encrypt the password before saving it to the database
+```
+hooks: {
+            beforeCreate: async(userPassword) => {
+                userPassword.password = await bcrypt.hashSync(userPassword.password, 8);
+                return userPassword;
+            },
+            beforeUpdate: async(userPassword) => {
+                userPassword.password = await bcrypt.hashSync(userPassword.password, 8);
+                return userPassword;
+            },
+            beforeBulkCreate: async(userPassword) => {
+                userPassword.forEach(async (user) => {
+                    user.password = await bcrypt.hashSync(user.password, 8);
+                });
+            }
+        },
+```
+
+#### Partials implementation for game comments
+``` 
+<div class="game_comments">
+<p>{{comment}}</p><span>Created by {{user.user_name}} on {{format_date createdAt}}</span>
+</div>
+```
+#### Load the games to the main page
+```
+<div class="games">
+  {{#each displayGames as |game|}}
+    <a href="/game/{{game.id}}">
+      <div class="game-card">
+        <img src="{{game.game_image}}" alt="{{game.name}}" />
+        <h2>{{game.name}}</h2>
+      </div>
+    </a>
+  {{/each}}
+</div>
 
 ```
 
@@ -117,10 +164,14 @@ If you have any questions regarding this project, please reach out to the group 
 
 [Live Link](https://fp-4play.herokuapp.com/)
 
-[LinkedIn Luiz Borges](https://www.linkedin.com/in/luiz-borges-2377b7142/)
+ * Luiz Borges<br>
+[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40'>](https://github.com/luizborges146) [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' height='40'>](https://www.linkedin.com/in/luiz-borges-2377b7142/)
 
-[LinkedIn Preston Ramsey](https://www.linkedin.com/in/preston-ramsey-354ab5244/)
+* Preston Ramsey<br>
+[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40'>](https://github.com/PRamsey02) [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' height='40'>](hhttps://www.linkedin.com/in/preston-ramsey-354ab5244/)
 
-[LinkedIn Gina Guerrero](https://www.linkedin.com/in/gina-guerrero-3105a9b2/)
+* Gina Guerrero<br>
+[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40'>](https://github.com/Ginalguerrero) [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' height='40'>](https://www.linkedin.com/in/gina-guerrero-3105a9b2/)
 
-[LinkedIn Kyle Vance](https://www.linkedin.com/in/kyle-s-vance/)
+* Kyle Vance<br>
+[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40'>](https://github.com/KVance1010) [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' height='40'>](https://www.linkedin.com/in/kyle-s-vance/)

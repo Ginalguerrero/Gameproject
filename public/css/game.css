@@ -1,91 +1,144 @@
-.images  {
-    margin:50px 80px;
-    display: grid;
-    grid-template-columns: 1.15fr 0.33fr 0.33fr;
-    gap: 30px;
-    grid-template-areas: 
+.images {
+  margin: 50px 80px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.33fr 0.33fr;
+  gap: 30px;
+  grid-template-areas:
     "header . ."
     "header . .";
 }
 
-.container-image {
-    width: 100%;
-    grid-area: header;
-}
-.container-image img {
-    width: 100%;
+.main-img {
+  width: 100%;
+  height: fit-content;
+  grid-area: header;
 }
 
-.container-image:hover .primary {
-    opacity: 0.2;
+.main-img {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.container-image:hover .info {
-    opacity: 1;
+.main-img img {
+  width: 100%;
+}
+
+images img {
+  width: 80%;
+  object-fit: cover;
+}
+/*test*/
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fafafa;
+  background: rgba(0, 0, 0, 0.921);
+  opacity: 0;
+  transition: all 600ms;
+  cursor: pointer;
 }
 
 .info {
-    width:    fit-content;
-    max-width: calc(100% - 40px);
-    position: absolute;
-    top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-    color: #fff;
-    opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 5% 20%;
 }
 
-.container-image {
-    position: relative;
-} 
+.left-box {
+  border-right: 2px solid #fafafa;
+  padding-right: 15px;
+}
+
+.left-box div,
+.right-box div {
+  margin: 10p 0x;
+}
+
+.single {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.overlay h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.info ul {
+  list-style-position: inside;
+}
+
+.info li {
+  font-size: 1rem;
+  display: list-item;
+  list-style-type: disc;
+  padding-left: 0;
+  font-size: 1.1rem;
+}
+.single p {
+  font-size: 1.1rem;
+}
+
+.main-img:hover .overlay {
+  opacity: 1;
+  background-attachment: fixed;
+}
 
 .description {
-    margin: 30px 80px;
-    line-height: 1.2rem;
-    color: #fafafa;
+  margin: 30px 80px;
+  line-height: 1.2rem;
+  color: #fafafa;
 }
 
-.game_comments{
-    display:flex;
-    justify-content: space-between;
-    border: 2px solid black;
-    background: var(--headerTextBoxColor);
-    margin: 30px 80px;
-    line-height: 1.2rem;
-    color: #fafafa;
-    padding:10px;
+.game_comments {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  background: var(--headerTextBoxColor);
+  margin: 30px 80px;
+  line-height: 1.2rem;
+  color: #fafafa;
+  padding: 10px;
 }
 
 .comments_title {
-    background-color: aliceblue;
-	font-weight: bold;
-	border: solid 2px black;
+  background-color: aliceblue;
+  font-weight: bold;
+  border: solid 5px black;
 }
-#addComment{
-	width: 90%;
-	border: solid 2px black;
-	display: flex;
-	justify-content: center;
+#addComment {
+  width: 90%;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
 }
 #addComment:hover {
-	color: black;
-	background-color: var(--body);
+  color: black;
+  background-color: var(--body);
 }
-#toggleComment{
-	width: 90%;
-	border: solid 2px black;
+#toggleComment {
+  width: 90%;
+  border: solid 2px black;
+  margin: 30px 80px;
 }
 #toggleComment label {
-	font-size: x-large;
+  font-size: x-large;
+  display: block;
 }
 
-#toggleComment input{
-	width: 100%;
-    background-color: black;
-    color:aliceblue;
-	margin-left: 20px;
-}
-
-.checked {
-    color: orange;
+#toggleComment textarea {
+  width: 100%;
+  background-color: var(--headerTextBoxColor);
+  color: #fff;
+  padding: 10px;
 }
