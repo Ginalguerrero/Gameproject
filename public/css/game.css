@@ -55,3 +55,33 @@
     color: #fafafa;
     padding:10px;
 }
+
+.comments_title {
+    background-color: aliceblue;
+	font-weight: bold;
+	border: solid 2px black;
+}
+#addComment{
+	width: 90%;
+	border: solid 2px black;
+	display: flex;
+	justify-content: center;
+}
+#addComment:hover {
+	color: black;
+	background-color: var(--body);
+}
+#toggleComment{
+	width: 90%;
+	border: solid 2px black;
+}
+#toggleComment label {
+	font-size: x-large;
+}
+
+#toggleComment input{
+	width: 100%;
+    background-color: black;
+    color:aliceblue;
+	margin-left: 20px;
+}

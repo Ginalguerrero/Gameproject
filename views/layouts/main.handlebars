@@ -4,10 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4Play</title>
+    {{!-- Fontawesome Link --}}
     <script src="https://kit.fontawesome.com/00f313d45b.js" crossorigin="anonymous"></script>
+    {{!-- Jquery link --}}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    
+    {{!-- TODO: Pagination link --}}
+    <link type="text/css" rel="stylesheet" href="simplePagination/simplePagination.css"/>
+    
+    {{!-- In-house CSS --}}
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/game.css">
+    <link rel="stylesheet" href="/css/game.css" />
+    <link rel="icon" href="#" />
+    {{!-- Jquery Script --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    {{!-- Jquery functionality Script --}}
+    <script defer type="text/javascript" src="/js/gamesAutoFill.js"></script>
+
+    {{!-- Links to pagination Script--}}
+    <script type="text/javascript" src="/simplePagination/jquery.simplePagination.js"></script>
+    {{#if loggedIn}}
+    <script defer type="text/javascript" src="/simplePagination/jquery.js"></script>
+    {{/if}}
   </head>
 
   <body>
@@ -17,8 +37,14 @@
           <img src="/images/logoWhite.png" alt = "logo" class="logo"> <h1>4Play</h1>
         </div>
       </a>
-      <div>
+      <div class="header-li">
         <ul>
+          <li>
+             <div class="searchGame">
+                <label for="search" class="form-label">Search Games</label>
+                <input class="form-control" id="search" />
+             </div>
+          </li>
           <a href="/" ><li>Home <i class="fa-brands fa-fort-awesome"></i></li></a>
           {{#if loggedIn}}
           <a href=""><li id="logout">Logout <i class="fa-solid fa-skull-crossbones"></i></li></a>
@@ -31,27 +57,75 @@
      
     </div>
 
-    <nav>
+    <aside>
       <ul>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
+        <li class="sidebar underline">Categories
+           <div class="dropdown-content">
+              <a href="/game/category/1">Single-player</a>
+              <a href="/game/category/2">Multi-player</a>
+              <a href="/game/category/3">Online Multi-Player</a>
+              <a href="/game/category/4">Co-op</a>
+              <a href="/game/category/5">Local Co-op</a>
+              <a href="/game/category/6">Online Co-op</a>
+              <a href="/game/category/7">Local Multi-Player</a>
+            </div>
+        </li> 
+
+        <li class="sidebar underline">Platforms
+          <div class="dropdown-content">
+              <a href="/">PC</a>
+          </div>
+        </li>
+
+        <li class="sidebar"><span class="underline">Genres</span>
+          <ul>
+            <li class="innerSidebar">
+              <a href="/game/genres/1"><div class="genres-container"><img class="img-sidebar" src="/images/strategy.jpg"><span class="text-sidebar">Strategy</span></div></a>
+            </li>
+            
+            <li class="innerSidebar">
+              <a href="/game/genres/2"><div class="genres-container"><img class="img-sidebar" src="/images/shooter.jpg"><span class="text-sidebar">Action</span></div></a>
+            </li>
+
+            <li class="innerSidebar">
+              <a href="/game/genres/3"><div class="genres-container"><img class="img-sidebar" src="/images/rpg.jpg"><span class="text-sidebar">RPG</span></div></a>
+            </li>
+
+            <li class="innerSidebar">
+              <a href="/game/genres/4"><div class="genres-container"><img class="img-sidebar" src="/images/racing.jpg"><span class="text-sidebar">Racing</span></div></a>
+            </li>
+
+            <li class="innerSidebar">
+              <a href="/game/genres/5"><div class="genres-container"><img class="img-sidebar" src="/images/sport.jpeg"><span class="text-sidebar">Sports</span></div></a>
+            </li>
+          </ul>
+        </li>
       </ul>
-      <!-- TODO: maybe add a icon to indicate to the user they can hover over the sidebar -->
-      <div class="hover-part"></div>
-    </nav>
+     
+      <div class="hover-part"><i class="fa-solid fa-arrow-right arrow"></i></div>
+    </aside>
 
     <main>
       {{{body}}}
     </main>
+    
+    <div id="pagination"></div>
+    {{!-- <div id="pagination" onload="paginationFun()"></div> --}}
 
-{{#if loggedIn}}
-<script src="/js/logout.js"></script>
-{{/if}}
-    <footer></footer>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+
+    <footer></footer> 
   </body>
 </html>
+
+
+{{!-- $(function() {
+    $(pagination).pagination({
+        items: 100,
+        itemsOnPage: 10,
+        cssStyle: 'light-theme'
+    });
+}); --}}
+

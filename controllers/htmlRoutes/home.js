@@ -8,12 +8,12 @@ router.get('/login', async (req, res) => {
 
 // Main page home route
 router.get('/:page', async (req, res) => {
-	const pageNumber = parseInt(req.params.page) || 1;
-	const pageLimit = 18;
-	const pageOffset = pageLimit * pageNumber;
+	const pageNumber = parseInt(req.params.page);
+	const pageLimit = 20;
+	const pageOffset = pageNumber === 0 ? 0 : pageLimit * pageNumber;
 	try {
 		const allGames = await GameData.findAll({
-			limit: 18,
+			limit: pageLimit,
 			offset: pageOffset,
 		});
 		const displayGames = allGames.map((game) => game.get({ plain: true }));
@@ -28,7 +28,7 @@ router.get('/:page', async (req, res) => {
 });
 
 router.get('/',async (req, res) => {
-	res.redirect('/1');
+	res.redirect('/0');
 });
 
 module.exports = router;
