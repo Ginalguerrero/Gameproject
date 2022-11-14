@@ -8,7 +8,7 @@ const auth = require('../../utils/auth');
 router.get('/name', async (req, res) => {
 	try {
 		const gameNames = await GameData.findAll({
-			attributes: ['name']
+			attributes: ['name', 'id'],
 		});
 		res.json(gameNames);
 	} catch (err) {
