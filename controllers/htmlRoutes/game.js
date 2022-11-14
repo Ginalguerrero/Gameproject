@@ -14,6 +14,7 @@ router.get('/name', async (req, res) => {
 	} catch (err) {
 		res.json(err);
 	}
+
 });
 
 // Returns Game by user Id includes comments auth

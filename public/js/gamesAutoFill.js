@@ -39,4 +39,10 @@ searchResult.addEventListener('keydown', async (event) => {
 	}
 });
 
+<<<<<<< HEAD
 $('#search').on('click', getGameNames);
+=======
+
+
+
+>>>>>>> eb31239c36d58dc8f41c0041a09ca3ee0fc98f82
