@@ -91,6 +91,8 @@ images img {
 
 .main-img:hover .overlay {
   opacity: 1;
+  background-attachment: fixed;
+
 }
 
 .description {
@@ -135,7 +137,7 @@ images img {
 
 #toggleComment input {
   width: 100%;
-  background-color: black;
-  color: aliceblue;
+  background-color: white;
+  color: black;
   margin-left: 20px;
 }

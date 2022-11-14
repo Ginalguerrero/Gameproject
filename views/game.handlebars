@@ -1,7 +1,7 @@
 {{#with game}}
 <div class="images">
         <div class="main-img">
-        <img src="{{game_image}}" alt="{{name}}" />
+        <img id="game_image" src="{{game_image}}" alt="{{name}}" />
         <div class="overlay">
           <div class="info">
             <div class="left-box">
@@ -63,7 +63,9 @@
   </div> --}}
 <div id="screenShots">
     {{#each screenshots as |image|}}
+    <div class="thumb">
       <img src="{{image.img_url}}" alt="{{name}}" />
+    </div>  
     {{/each}}
 </div>
 
