@@ -118,6 +118,7 @@ images img {
 
 #addComment:hover {
   box-shadow: 7px 7px 10px #000000d6;
+  cursor: pointer;
 }
 
 #toggleComment {
