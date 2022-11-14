@@ -13,7 +13,6 @@ function getGameNames() {
 				gameIds.push(name.id);
 			});
 		});
-
 	$('#search').autocomplete({
 		source: games,
 	});
@@ -34,7 +33,12 @@ searchResult.addEventListener('keydown', async (event) => {
 			let id = gameId;
 				document.location.replace(`/game/${id}`);
 		} else {
-			alert('Please enter another game name');
+			swal({
+				title: "No game found",
+				text: "Please enter another game name.",
+				icon: "warning",
+				dangerMode: true,
+			  });
 		}
 	}
 });

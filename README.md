@@ -1,4 +1,4 @@
-# Gameproject: 4Pplay
+# Gameproject: 4P-4play
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
