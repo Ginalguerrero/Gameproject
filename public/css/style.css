@@ -73,7 +73,7 @@ header {
 	margin-right: 30px;
 }
 
-#search{
+.searchHeader{
 	width: 225px;
 	background-color:var(--textColor);
 	color: black;
@@ -100,17 +100,18 @@ aside {
 	
 }
 
-#searchside{
-	width: 180px;
+.searchSide{
+	width: 165px;
 	background-color:var(--textColor);
 	color: black;
 	font-family: var(--gameTitle);
 	border-radius: 12px;
-	padding-left: 8px;
+	padding-left: 4px;
 	height: 40px;
+	margin: 5px 0px;
+	margin-left: 10px;
 	font-size: 25px;
 	display: none;
-
 }
 
 aside:hover {
@@ -348,7 +349,7 @@ form .form-input {
 		display: none;
 	}
 
-	#searchside{
+	.searchSide{
 		display:inline;
 	}
 
