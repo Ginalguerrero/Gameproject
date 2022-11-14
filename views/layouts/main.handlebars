@@ -42,14 +42,14 @@
           <li>
              <div class="searchGame">
                 <label for="search" class="form-label">Search Games</label>
-                <input class="form-control" id="search" />
+                <input class="form-control searchHeader" id="search" />
              </div>
           </li>
-          <a href="/" ><li>Home <i class="fa-brands fa-fort-awesome"></i></li></a>
+          <a href="/" ><li><spam>Home </spam><i class="fa-brands fa-fort-awesome"></i></li></a>
           {{#if loggedIn}}
-          <a href=""><li id="logout">Logout <i class="fa-solid fa-skull-crossbones"></i></li></a>
+          <a href=""><li id="logout"><spam>Logout </spam><i class="fa-solid fa-skull-crossbones"></i></li></a>
           {{else}}
-          <a href ="/login"><li>Login<i class="fa-solid fa-user-astronaut"></i></li></a>
+          <a href ="/login"><li><spam>Login </spam><i class="fa-solid fa-user-astronaut"></i></li></a>
           {{/if}}
         </ul>
       </div>
@@ -94,15 +94,21 @@
             <li class="innerSidebar">
               <a href="/game/genres/4"><div class="genres-container"><img class="img-sidebar" src="/images/racing.jpg"><span class="text-sidebar">Racing</span></div></a>
             </li>
-
+            
             <li class="innerSidebar">
               <a href="/game/genres/5"><div class="genres-container"><img class="img-sidebar" src="/images/sport.jpeg"><span class="text-sidebar">Sports</span></div></a>
             </li>
+              
           </ul>
         </li>
       </ul>
      
       <div class="hover-part"><i class="fa-solid fa-arrow-right arrow"></i></div>
+      {{!-- This is the serach for the sidebar --}}
+             <div class="searchGame-side">
+                {{!-- <label for="searchsid" class="form-label"></label> --}}
+                <input class="form-control searchSide" id="search" placeholder="Search Games" />
+             </div>
     </aside>
 
     <main>

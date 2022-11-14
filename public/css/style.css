@@ -31,7 +31,8 @@ body {
 header {
 	background-color: var(--headerTextBoxColor);
 	color: var(--textColor);
-	height: 100px;
+	min-height: 100px;
+	height: auto;
 	width: 100%;
 	font-size: 75px;
 	display: flex;
@@ -51,10 +52,12 @@ header {
 
 .logo_name h1 {
 	font-family: var(--textNormal);
+	font-size: 100%;
 }
 
 .logo_name {
 	display: flex;
+	align-items: center;
 }
 
 /* *******************Login & Home icons******************** */
@@ -70,7 +73,7 @@ header {
 	margin-right: 30px;
 }
 
-#search{
+.searchHeader{
 	width: 225px;
 	background-color:var(--textColor);
 	color: black;
@@ -95,6 +98,20 @@ aside {
 	font-family: var(--textDescription);
 	border-right: 0.5px solid rgba(255, 255, 255, 0.525);
 	
+}
+
+.searchSide{
+	width: 165px;
+	background-color:var(--textColor);
+	color: black;
+	font-family: var(--gameTitle);
+	border-radius: 12px;
+	padding-left: 4px;
+	height: 40px;
+	margin: 5px 0px;
+	margin-left: 10px;
+	font-size: 25px;
+	display: none;
 }
 
 aside:hover {
@@ -123,7 +140,7 @@ span.text-sidebar{
 
 .hover-part {
 	width: 216px;
-	height: 100%;
+	/* height: 100%; */
 	display: flex;
 	justify-content: flex-end;
 	padding-top: 10px;
@@ -184,6 +201,7 @@ li .innerSidebar > .text-sidebar{
 	margin: 5px 0px;
 	text-decoration: none;
 }
+
 
 /********************** Games Area Main page************************ */
 main {
@@ -320,4 +338,74 @@ form .form-input {
 	color: white;
 }
 
+/*################## media Query Screen ######################*/
 
+@media screen and (max-width:1150px) {
+	header {
+		flex-wrap: wrap;
+	}
+
+	.searchGame{
+		display: none;
+	}
+
+	.searchSide{
+		display:inline;
+	}
+
+	.logo {
+		max-width:62px;
+		max-height: 55px;
+	}	
+
+	.logo_name h1 {
+		font-size: 85%;
+	}
+
+	.games div {
+		width: 225px;
+		height: 300px;
+
+	}
+}
+@media screen and (max-width:620px) {
+	.logo {
+		max-width:47px;
+		max-height: 42px;
+	}	
+	.logo_name h1 {
+		font-size: 60%;
+	}
+
+	header{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+@media screen and (max-width:545px) {
+	/* .logo_name h1{
+		display: none;
+	} */
+
+	.logo {
+		max-width:47px;
+		max-height: 42px;
+	}
+
+	a>li>spam{
+		display: none;
+	}
+
+
+}
+
+
+
+/* .img-sidebar {
+	max-width: 60px;
+	max-height: 45px;
+	min-height: 45px;
+	margin: 5px 10px;
+} */
