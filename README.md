@@ -4,7 +4,7 @@
 
 ## Description
 
-
+desctiption of what the project does*******
 
 ---
 
@@ -26,12 +26,13 @@
 
 ## Installation
 
-
+add instructions on how to set up the project*******
 
 ---
 
 ## Usage
 
+add instructions on how to use the project*******
 
 ---
 
@@ -52,28 +53,31 @@
 
 ## Screenshots
 
-#### Home Page
+#### picture title
 
-![Home Page](./public/images/home.jpg)
+![Home Page](url link)*******
 
-#### Login Page
+#### picture title
 
-![Login Page]()
+![Login Page](url link )*******
 
 ---
 
 ## CodeSnippets
 
-#### 
+#### title here
 
 ``` Handlebars
+
+code here*******
 
 ```
 
-#### 
+#### title here
 
 ``` Handlebars
 
+code here*******
 
 ```
 
@@ -97,7 +101,7 @@ The license used on this project was MIT license
 
 ## Contributors
 
-Kyle Vance
+Luiz Borges, Preston Ramsey, Gina Guerrero, and Kyle Vance
 
 ## Questions
 
@@ -106,6 +110,9 @@ If you have any questions regarding this project, please reach out to the group 
 [Live Link](https://fp-4play.herokuapp.com/)
 
 [LinkedIn Luiz Borges](https://www.linkedin.com/in/luiz-borges-2377b7142/)
+
 [LinkedIn Preston Ramsey](https://www.linkedin.com/in/preston-ramsey-354ab5244/)
+
 [LinkedIn Gina Guerrero](https://www.linkedin.com/in/gina-guerrero-3105a9b2/)
+
 [LinkedIn Kyle Vance](https://www.linkedin.com/in/kyle-s-vance/)
