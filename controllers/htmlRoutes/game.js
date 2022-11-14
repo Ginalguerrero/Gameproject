@@ -9,7 +9,13 @@ router.get('/name', async (req, res) => {
 
 	try {
 		const gameNames = await GameData.findAll({
+			attributes: ['name'],
+
+
+	try {
+		const gameNames = await GameData.findAll({
 			attributes: ['name']
+
 		});
 		res.json(gameNames);
 	} catch (err) {
