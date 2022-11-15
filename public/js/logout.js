@@ -10,7 +10,12 @@ const logoutHandler = async () => {
 	if (response.ok) {
 	  document.location.replace('/');
 	} else {
-	  alert('Failed to log out.');
+		swal({
+			title: "Logout Failed",
+			text: "Please try again.",
+			icon: "warning",
+			dangerMode: true,
+		  });
 	}
   };
   

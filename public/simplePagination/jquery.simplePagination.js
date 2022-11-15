@@ -20,7 +20,7 @@
 				edges: 2,
 				currentPage: 0,
 				useAnchors: true,
-				hrefTextPrefix: '',
+				hrefTextPrefix:'#page-',
 				hrefTextSuffix: '',
 				prevText: 'Prev',
 				nextText: 'Next',
