@@ -72,7 +72,7 @@ header {
   margin-right: 30px;
 }
 
-#search {
+.searchHeader {
   width: 225px;
   background-color: var(--textColor);
   color: black;
@@ -137,7 +137,7 @@ span.text-sidebar {
 
 .hover-part {
   width: 216px;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   justify-content: flex-end;
   padding-top: 10px;
@@ -220,6 +220,8 @@ main {
   box-shadow: 7px 7px 10px #000000d6;
   width: 300px;
   height: 400px;
+  min-width: 300px;
+  min-height: 400px;
   object-fit: cover;
 }
 
@@ -370,8 +372,12 @@ form .form-input {
 }
 
 .container-image #primary {
-  width: 100%;
-  height: 600px;
+  /* width: 100%;
+  height: 600px; */
+  width: 70vw;
+  height: 100%;
+  min-width: 460px;
+  min-height: auto;
 }
 #screenShots {
   min-width: 600px;
@@ -379,7 +385,6 @@ form .form-input {
 
 #screenShots .thumb {
   width: 280px;
-
   float: left;
   height: 290px;
   overflow: hidden;
@@ -423,6 +428,12 @@ form .form-input {
 	.games div {
 		width: 225px;
 		height: 300px;
+	}
+
+	#screenShots .thumb {
+		width: 230px;
+		height: 200px;
+		margin-right: 0px;
 
 	}
 }
@@ -442,7 +453,7 @@ form .form-input {
 	}
 }
 
-@media screen and (max-width:545px) {
+@media screen and (max-width:570px) {
 	/* .logo_name h1{
 		display: none;
 	} */

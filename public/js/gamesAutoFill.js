@@ -1,6 +1,6 @@
 const games = [];
 const gameIds = [];
-const searchResult = document.querySelector('#search');
+const searchResult = document.querySelector('.search');
 
 function getGameNames() {
 	fetch('/game/name')
@@ -13,8 +13,7 @@ function getGameNames() {
 				gameIds.push(name.id);
 			});
 		});
-
-	$('#search').autocomplete({
+	$('.search').autocomplete({
 		source: games,
 	});
 }
@@ -34,9 +33,14 @@ searchResult.addEventListener('keydown', async (event) => {
 			let id = gameId;
 				document.location.replace(`/game/${id}`);
 		} else {
-			alert('Please enter another game name');
+			swal({
+				title: "No game found",
+				text: "Please enter another game name.",
+				icon: "warning",
+				dangerMode: true,
+			  });
 		}
 	}
 });
 
-$('#search').on('click', getGameNames);
+$('.search').on('click', getGameNames);

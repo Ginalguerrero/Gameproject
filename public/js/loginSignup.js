@@ -17,7 +17,12 @@ const loginHandler = async () => {
         if (response.ok) {
             document.location.replace('/')
         } else {
-            alert("Login Failed");
+            swal({
+                title: "Login Failed",
+                text: "Wrong password or userId, please try again!",
+                icon: "warning",
+                dangerMode: true,
+              });
         }
     }
 };
@@ -36,7 +41,12 @@ const signupHandler = async () => {
         if (response.ok) {
             document.location.replace('/')
         } else {
-            alert("Login Failed");
+            swal({
+                title: "Signup Failed",
+                text: "Please make sure your password is numbers and characters and at least eight characters long.",
+                icon: "warning",
+                dangerMode: true,
+              });
         }
     }
 };
