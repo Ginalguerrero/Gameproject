@@ -2,21 +2,6 @@ const path = require("path");
 require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
-
-// Hanlerbards config files
-// const config = {
-//   helpers: {
-//     renderStars: (rating) => {
-//       let result = "";
-//       for (let i = 1; i <= 5; i++) {
-//         let checked = rating >= i ? " checked" : "";
-//         result += `<span class='fa fa-star${checked}'></span>`;
-//       }
-//       return result;
-//     },
-//   },
-// };
-
 const exphbs = require("express-handlebars");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
