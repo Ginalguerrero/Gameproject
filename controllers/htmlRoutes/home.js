@@ -8,7 +8,6 @@ router.get('/login', async (req, res) => {
 
 // Main page home route
 router.get('/:page', async (req, res) => {
-// router.get('/', async (req, res) => {
 	const pageNumber = parseInt(req.params.page);
 	const pageLimit = 20;
 	const pageOffset = pageNumber === 0 ? 0 : pageLimit * pageNumber;
