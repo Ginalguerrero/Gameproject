@@ -1,6 +1,7 @@
 const games = [];
 const gameIds = [];
 const searchResult = document.querySelector('.search');
+const searchSide = document.querySelector('#searchSide');
 
 function getGameNames() {
 	fetch('/game/name')
@@ -19,6 +20,31 @@ function getGameNames() {
 }
 
 searchResult.addEventListener('keydown', async (event) => {
+	if (event.key === 'Enter') {
+		let validate = event.target.value;
+		let onList = 0;
+		let gameId;
+		for (let i = 0; i < games.length; i++) {
+			if (validate === games[i]) {
+				onList = 1;
+				gameId = gameIds[i];
+			}
+		}
+		if (onList === 1) {
+			let id = gameId;
+				document.location.replace(`/game/${id}`);
+		} else {
+			swal({
+				title: "No game found",
+				text: "Please enter another game name.",
+				icon: "warning",
+				dangerMode: true,
+			  });
+		}
+	}
+});
+
+searchSide.addEventListener('keydown', async (event) => {
 	if (event.key === 'Enter') {
 		let validate = event.target.value;
 		let onList = 0;

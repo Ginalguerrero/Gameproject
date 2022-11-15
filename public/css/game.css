@@ -126,24 +126,52 @@
   font-family: var(--gameTitle);
 }
 
+/*########### this was added by luiz ##############*/
+button#submitComment {
+  display: flex;
+  text-align: center;
+  cursor: pointer;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: #010427;
+  margin: 20px;
+  padding: 10px;
+  color: white;
+  letter-spacing: 1px;
+  border: 0.5px solid black;
+  font-family: var(--gameTitle);
+  font-weight: 100;
+}
+
+.comments_title.btn-Addcomment {
+  display: flex;
+  justify-content: center;
+  background: none;
+  border: none;
+}
+
+button#submitComment:hover {
+  box-shadow: 2px 2px 2px #000000d6;
+  cursor: pointer;
+  color: #e60000; 
+  border:black
+}
+
+/*########### this was added by luiz ##############*/
+
 #addComment {
   width: 90%;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
   cursor: pointer;
-=======
   font-size: large;
   font-family: var(--gameTitle);
-
->>>>>>> 8954408ba8147158aeb460619576fb0f891050ea
 }
 
 #addComment:hover {
   box-shadow: 7px 7px 10px #000000d6;
   cursor: pointer;
-  color: #e60000
-  
+  color: #e60000 
 }
 
 #toggleComment {
@@ -170,5 +198,4 @@
   .info li {
     font-size: 75%;
   }
-
-
+}
