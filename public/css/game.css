@@ -126,7 +126,6 @@
   font-family: var(--gameTitle);
 }
 
-/*########### this was added by luiz ##############*/
 button#submitComment {
   display: flex;
   text-align: center;
@@ -156,8 +155,6 @@ button#submitComment:hover {
   color: #e60000; 
   border:black
 }
-
-/*########### this was added by luiz ##############*/
 
 #addComment {
   width: 90%;
