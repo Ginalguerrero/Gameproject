@@ -459,7 +459,7 @@ form .form-input {
 
 	}
 }
-@media screen and (max-width:620px) {
+@media screen and (max-width:650px) {
 	.logo {
 		max-width:47px;
 		max-height: 42px;
@@ -476,10 +476,6 @@ form .form-input {
 }
 
 @media screen and (max-width:570px) {
-	/* .logo_name h1{
-		display: none;
-	} */
-
 	.logo {
 		max-width:47px;
 		max-height: 42px;
