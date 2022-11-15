@@ -56,6 +56,8 @@ header {
 
 .logo_name {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* *******************Login & Home icons******************** */
