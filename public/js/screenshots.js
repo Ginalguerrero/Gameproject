@@ -23,15 +23,6 @@ jQuery(document).ready(function () {
 		if (scrollHeight > 150 && scrollHeight < 400) {
 			marginTop++;
 			applyMargin = scrollHeight - 150;
-			// imgelement.css("margin-top", applyMargin);
 		}
-	});
-
-	/*imgelement.on("load", function () {
-    var imgparent = jQuery(".main-img");
-    parentHeight = imgparent.height();
-
-    imgHeight = JQuery(this).height();
-    console.log(imgparent, imgHeight);
-  });*/
+	})
 });

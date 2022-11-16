@@ -1,4 +1,4 @@
-# Gameproject: 4P-4play
+# Game project: [4P-4play](https://fp-4play.herokuapp.com/0)
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
@@ -48,7 +48,7 @@ The home page will load 20 games to the user, displaying the game name and image
  * Check game  by Category
  * Search by game name
  * Add comments to the game
- * Add rating to the game (0 - 5)
+ * Check the game rating (0 - 5)
  * Log out
 
 
@@ -71,16 +71,20 @@ The home page will load 20 games to the user, displaying the game name and image
 
 ## Screenshots
 
-#### Main Page 
-
+### Main Page 
+#### Mock template
 ![Mock template ](./public/images/mainPage.jpg)
+
+#### Final main page
 ![Main Page ](./public/images/Game-Homepage.gif)
 
-#### Login Page
+### Login Page
 
 ![Login Page](./public/images/loginPage.gif )
 
----
+### Database Relation Diagram
+![Database Relation Diagram](./public/images/RelationDiagram.png)
+
 
 ## CodeSnippets
 
