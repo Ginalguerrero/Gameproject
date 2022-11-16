@@ -31,7 +31,6 @@ router.get("/:id", auth, async (req, res) => {
       ],
     });
     const game = gameData.get({ plain: true });
-    console.log(game);
     res.render("game", {
       game,
       loggedIn: req.session.loggedIn,

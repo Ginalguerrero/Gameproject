@@ -23,7 +23,7 @@ const commentFormHandler = async (event) => {
 		});
 		if (response.ok) {
 			addComment();
-			document.location.replace('/');
+			document.location.reload();
 		} else {
 			swal({
                 title: "No Luck :(",

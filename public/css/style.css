@@ -237,32 +237,35 @@ main {
 }
 
 /******************** Pagination ***************************/
+.centerPag {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
 
-.center {
-	text-align: center;
-  }
-  
-  .pagination {
-	display: inline-block;
-  }
-  
-  .pagination a {
-	color: black;
-	float: left;
-	padding: 8px 16px;
-	text-decoration: none;
-	transition: background-color .3s;
-	border: 1px solid #ddd;
-	margin: 0 4px;
-  }
-  
-  .pagination a.active {
-	background-color: #4CAF50;
-	color: white;
-	border: 1px solid #4CAF50;
-  }
-  
-  .pagination a:hover:not(.active) {background-color: #ddd;}
+.pag {
+  display: inline-block;
+}
+
+a.page {
+  color: white;
+  float: left;
+  padding: 20px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+a.page.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+a.page:hover {
+  background-color: #ddd;
+}
 
 /*********************** Login Page ***********************/
 .center {
@@ -455,7 +458,7 @@ form .form-input {
 
 	}
 }
-@media screen and (max-width:650px) {
+@media screen and (max-width:655px) {
 	.logo {
 		max-width:47px;
 		max-height: 42px;
@@ -472,6 +475,7 @@ form .form-input {
 }
 
 @media screen and (max-width:570px) {
+	
 	.logo {
 		max-width:47px;
 		max-height: 42px;
